@@ -1,18 +1,26 @@
 function mainPage() {
     document.getElementById("settingsPage").style.display = 'none';
     document.getElementById("charactersPage").style.display = 'none';
+    document.getElementById("spellListTab").style.border = '3px #760f78 solid';
+    document.getElementById("settingsTab").style.border = 'none';
+    document.getElementById("charactersTab").style.border = 'none';
 }
 
 function settingsPage() {
     document.getElementById("settingsPage").style.display = 'initial';
     document.getElementById("charactersPage").style.display = 'none';
+    document.getElementById("settingsTab").style.border = '3px #760f78 solid';
+    document.getElementById("spellListTab").style.border = 'none';
+    document.getElementById("charactersTab").style.border = 'none';
 
 }
 
 function charactersPage() {
     document.getElementById("settingsPage").style.display = 'none';
     document.getElementById("charactersPage").style.display = 'initial';
-
+    document.getElementById("charactersTab").style.border = '3px #760f78 solid';
+    document.getElementById("settingsTab").style.border = 'none';
+    document.getElementById("spellListTab").style.border = 'none';
 }
 
 function editSpell() {
