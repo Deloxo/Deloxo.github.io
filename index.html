@@ -135,7 +135,44 @@
 
         #footer {
             height: 60px;
+            width: 412px;
             border-top: 2px white solid;
+        }
+
+        #spellListTab {
+          height: 50px;
+          width: 50px;
+          background-image: url("spellListTab.png");
+          background-size: cover;
+          border: none;
+          margin-top: 10px;
+          position: relative;
+          transform-origin: center;
+          left: 61px;
+        }
+
+        #charactersTab {
+          height: 50px;
+          width: 50px;
+          background-image: url("charactersTab.png");
+          background-size: cover;
+          border: none;
+          margin-top: 10px;
+          transform-origin: center;
+          position: fixed;
+          left: 171px;
+        }
+
+        #settingsTab {
+          height: 50px;
+          width: 50px;
+          background-image: url("settingsTab.png");
+          background-size: cover;
+          border: none;
+          margin-top: 10px;
+          position: relative;
+          transform-origin: center;
+          left: 231px;
         }
     </style>
 </head>
@@ -173,6 +210,9 @@
         </button>
     </div>
     <div id="footer">
+        <button onclick="" id="spellListTab"></button>
+        <button onclick="" id="charactersTab"></button>
+        <button onclick="" id="settingsTab"></button>
     </div>
     <script>
         function editSpell() {
