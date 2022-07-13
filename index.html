@@ -132,13 +132,14 @@
         }
 
         #spellEdit {
-            width: 414px;
-            height: 622px;
+            width: 412px;
+            height: 714px;
             position: absolute;
             left: 0px;
             top: 0px;
             background-color: #430161;
             display: none;
+            border: 1px white solid;
             z-index: 1;
         }
 
@@ -183,12 +184,62 @@
           position: fixed;
           left: 75%;
         }
+
+        #spellCreate {
+          width: 412px;
+          height: 714px;
+          position: absolute;
+          left: 0px;
+          top: 0px;
+          background-color: #430161;
+          display: none;
+          border: 1px white solid;
+          z-index: 1;
+        }
+
+        #settingsPage {
+          width: 412px;
+          height: 651px;
+          position: absolute;
+          left: 0px;
+          top: 0px;
+          background-color: #430161;
+          display: none;
+          border: 1px white solid;
+          z-index: 1;
+        }
+
+        #charactersPage {
+          width: 412px;
+          height: 651px;
+          position: absolute;
+          left: 0px;
+          top: 0px;
+          background-color: #430161;
+          display: none;
+          border: 1px white solid;
+          z-index: 1;
+        }
+
+        #titleTextBox {
+          width: 300px;
+          height: 40px;
+          top: 50px;
+          position: fixed;
+        }
+
+        #submitButton {
+          transform: translate(-50%);
+          position: fixed;
+          left: 50%;
+          top: 550px;
+        }
     </style>
 </head>
 
 <body>
     <div id="header">
-        <button id="createNewSpellButton">
+        <button id="createNewSpellButton" onclick="createSpell()">
 
         </button>
 
@@ -201,7 +252,7 @@
     </div>
     <div id="spellPage">
         <div id="spellPageHeader">
-            <button onclick="document.getElementById('spellPage').style.display = 'none'" id="backButton">
+            <button onclick="backToMain()" id="backButton">
             </button>
             <button id="editButton" onclick="editSpell()">
 
@@ -214,19 +265,44 @@
     <div id="spellEdit">
         <button onclick="cancelEdit()" id="backButton">
         </button>
+        Title: <input id="titleTextBox">
+        <button id="submitButton" onclick="submitToStorage()">
+        </button>
+    </div>
+    <div id="spellCreate">
+        <button onclick="cancelCreation()" id="backButton">
+        </button>
         <input id="titleTextBox">
         <button id="submitButton" onclick="submitToStorage()">
         </button>
     </div>
     <div id="footer">
-        <button onclick="" id="spellListTab"></button>
-        <button onclick="" id="charactersTab"></button>
-        <button onclick="" id="settingsTab"></button>
+        <button onclick="mainPage()" id="spellListTab"></button>
+        <button onclick="charactersPage()" id="charactersTab"></button>
+        <button onclick="settingsPage()" id="settingsTab"></button>
     </div>
+    <div id="charactersPage"></div>
+    <div id="settingsPage"></div>
     <script>
+        var spells = JSON.parse(localStorage.spells);
+        function mainPage() {
+          document.getElementById("settingsPage").style.display = 'none';
+          document.getElementById("charactersPage").style.display = 'none';
+        }
+        function settingsPage() {
+          document.getElementById("settingsPage").style.display = 'initial';
+          document.getElementById("charactersPage").style.display = 'none';
+
+        }
+        function charactersPage() {
+          document.getElementById("settingsPage").style.display = 'none';
+          document.getElementById("charactersPage").style.display = 'initial';
+
+        }
         function editSpell() {
             document.getElementById("spellPage").style.display = 'none';
             document.getElementById("spellEdit").style.display = 'initial';
+            document.getElementById("titleTextBox").value = Object.values(spells)[spellIndex].name;
         }
 
         function cancelEdit() {
@@ -234,11 +310,28 @@
             document.getElementById("spellEdit").style.display = 'none';
         }
 
+        function createSpell() {
+            document.getElementById("spellPage").style.display = 'none';
+            document.getElementById("spellCreate").style.display = 'initial';
+        }
+
+        function cancelCreation() {
+            document.getElementById("spellCreate").style.display = 'none';
+        }
+
         function addToChar(number) {}
 
+        var spellIndex = -1;
+
         function spellPage(number) {
-            document.getElementById("spellPageTitle").innerHTML = Object.values(JSON.parse(localStorage.spells))[number].name;
+            spellIndex = number;
+            document.getElementById("spellPageTitle").innerHTML = Object.values(spells)[number].name;
             document.getElementById("spellPage").style.display = 'initial';
+        }
+
+        function backToMain() {
+          spellIndex = -1;
+          document.getElementById("spellPage").style.display = 'none';
         }
 
         for (var x = 0; x < Object.keys(JSON.parse(localStorage.spells)).length; x++) {
