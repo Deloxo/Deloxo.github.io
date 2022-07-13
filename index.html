@@ -30,18 +30,18 @@
             height: 50px;
             border: none;
             margin: 5px;
-         
+
         }
-      
-      #createNewSpellButton {
-        background-image: url("newSpellButton.png");
-        background-size: cover;
-      }
-      
-      #settingsButton {
-        background-image: url("filterSettingsButton.png");
-        background-size: cover;
-      }
+
+        #createNewSpellButton {
+            background-image: url("newSpellButton.png");
+            background-size: cover;
+        }
+
+        #settingsButton {
+            background-image: url("filterSettingsButton.png");
+            background-size: cover;
+        }
 
         #searchBar {
             height: 30px;
@@ -68,73 +68,73 @@
             padding-top: 10px;
             line-height: 20px;
         }
-      
-      .spellTitle {
-        position: relative;
-        left: 10px;
-        top: -25px;
-      }
-      
-      #charAddButton {
-        width: 50px;
-        height: 50px;
-        background-image: url("addToCharButton.png");
-        background-size: cover;
-        border: none;
-        position: relative;
-      }
-      
-      #spellPage {
-        width: 414px;
-        height: 600px;
-        position: absolute;
-        left: 0px;
-        top: 0px;
-        background-color: #430161;
-        display: none;
-      }
-      
-      #spellPageTitle {
-        font-size: 30px;
-        margin-left: 30px;
-      }
-      
-      #backButton {
-        width: 50px;
-        height: 50px;
-        background-image: url("backButton.png");
-        background-size: cover;
-        border: none;
-      }
 
-      #submitButton {
-        width: 100px;
-        align-self: center;
-      }
+        .spellTitle {
+            position: relative;
+            left: 10px;
+            top: -25px;
+        }
 
-      #editButton {
-        width: 50px;
-        height: 50px;
-        background-image: url("editButton.png");
-        background-size: cover;
-        border: none;
-        float: right;
-        margin-right: 10px;
-      }
-      
-      #spellEdit {
-        width: 414px;
-        height: 622px;
-        position: absolute;
-        left: 0px;
-        top: 0px;
-        background-color: #430161;
-        display: none;
-      }
-        
+        #charAddButton {
+            width: 50px;
+            height: 50px;
+            background-image: url("addToCharButton.png");
+            background-size: cover;
+            border: none;
+            position: relative;
+        }
+
+        #spellPage {
+            width: 414px;
+            height: 580px;
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            background-color: #430161;
+            display: none;
+        }
+
+        #spellPageTitle {
+            font-size: 30px;
+            margin-left: 30px;
+        }
+
+        #backButton {
+            width: 50px;
+            height: 50px;
+            background-image: url("backButton.png");
+            background-size: cover;
+            border: none;
+        }
+
+        #submitButton {
+            width: 100px;
+            align-self: center;
+        }
+
+        #editButton {
+            width: 50px;
+            height: 50px;
+            background-image: url("editButton.png");
+            background-size: cover;
+            border: none;
+            float: right;
+            margin-right: 10px;
+        }
+
+        #spellEdit {
+            width: 414px;
+            height: 622px;
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            background-color: #430161;
+            display: none;
+        }
+
         #footer {
             height: 60px;
-            border: 2px white solid;   
+            border: 2px white solid;
         }
     </style>
 </head>
@@ -144,7 +144,7 @@
         <button id="createNewSpellButton">
 
         </button>
-     
+
         <input id="searchBar" type="text" placeholder="Search">
         <button id="settingsButton">
 
@@ -153,46 +153,47 @@
     <div id="mainContent">
     </div>
     <div id="spellPage">
-      <div id="spellPageHeader">
-      <button onclick="document.getElementById('spellPage').style.display = 'none'" id="backButton">
-      </button>
-        <button id="editButton" onclick="editSpell()">
-          
-        </button>
-      </div>
-      <div id="spellPageTitle">
-        
-      </div>
+        <div id="spellPageHeader">
+            <button onclick="document.getElementById('spellPage').style.display = 'none'" id="backButton">
+            </button>
+            <button id="editButton" onclick="editSpell()">
+
+            </button>
+        </div>
+        <div id="spellPageTitle">
+
+        </div>
     </div>
     <div id="spellEdit">
-      <button onclick="cancelEdit()" id="backButton">
-      </button>
-      <input id="titleTextBox">
-      <button id="submitButton" onclick="submitToStorage()">
-      </button>
+        <button onclick="cancelEdit()" id="backButton">
+        </button>
+        <input id="titleTextBox">
+        <button id="submitButton" onclick="submitToStorage()">
+        </button>
     </div>
     <div id="footer">
     </div>
     <script>
-      function editSpell() {
-        document.getElementById("spellPage").style.display = 'none';
-        document.getElementById("spellEdit").style.display = 'initial';
-      }
-      
-      function cancelEdit() {
-        document.getElementById("spellPage").style.display = 'initial';
-        document.getElementById("spellEdit").style.display = 'none';
-      }
-      
-      function addToChar(number) {}
-      function spellPage(number) {
-        document.getElementById("spellPageTitle").innerHTML = Object.values(JSON.parse(localStorage.spells))[number].name;
-        document.getElementById("spellPage").style.display = 'initial';
-      }
-    
+        function editSpell() {
+            document.getElementById("spellPage").style.display = 'none';
+            document.getElementById("spellEdit").style.display = 'initial';
+        }
+
+        function cancelEdit() {
+            document.getElementById("spellPage").style.display = 'initial';
+            document.getElementById("spellEdit").style.display = 'none';
+        }
+
+        function addToChar(number) {}
+
+        function spellPage(number) {
+            document.getElementById("spellPageTitle").innerHTML = Object.values(JSON.parse(localStorage.spells))[number].name;
+            document.getElementById("spellPage").style.display = 'initial';
+        }
+
         for (var x = 0; x < Object.keys(JSON.parse(localStorage.spells)).length; x++) {
             document.getElementById("mainContent").innerHTML += '<div class="spell" onclick="spellPage(' + x + ')"><button onclick="addToChar(' + x + ')" id="charAddButton"></button><span class="spellTitle"></span><br><span class="spellType"></span></div>';
-          document.getElementsByClassName("spellTitle")[x].innerHTML = Object.values(JSON.parse(localStorage.spells))[x].name;
+            document.getElementsByClassName("spellTitle")[x].innerHTML = Object.values(JSON.parse(localStorage.spells))[x].name;
         }
     </script>
 </body>
