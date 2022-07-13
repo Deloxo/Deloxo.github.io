@@ -18,7 +18,7 @@ function charactersPage() {
 function editSpell() {
     document.getElementById("spellPage").style.display = 'none';
     document.getElementById("spellEdit").style.display = 'initial';
-    document.getElementById("titleTextBox").value = Object.values(spells)[spellIndex].name;
+    document.getElementById("nameTextBoxEdit").value = Object.values(spells)[spellIndex].name;
 }
 
 function cancelEdit() {
@@ -39,4 +39,15 @@ function spellPage(number) {
     spellIndex = number;
     document.getElementById("spellPageTitle").innerHTML = Object.values(spells)[number].name;
     document.getElementById("spellPage").style.display = 'initial';
+}
+
+function searchResultsChange() {
+  for (var x = 0; x < Object.keys(JSON.parse(localStorage.spells)).length; x++) {
+    document.getElementsByClassName("spell")[x].style.display = '';
+  }
+  for (var x = 0; x < Object.keys(JSON.parse(localStorage.spells)).length; x++) {
+      if (Object.values(JSON.parse(localStorage.spells))[x].name.includes(document.getElementById("searchBar").value) == false) {
+        document.getElementsByClassName("spell")[x].style.display = 'none';
+      }
+  }
 }

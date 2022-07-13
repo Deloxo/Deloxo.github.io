@@ -120,6 +120,7 @@
             position: relative;
             top: -20px;
             width: 266px;
+            color: white;
         }
 
         #settingsButton {
@@ -156,7 +157,7 @@
             margin-left: 30px;
         }
 
-        #submitButton {
+        .submitButton {
             align-self: center;
             background-color: #75249a;
             border: none;
@@ -169,7 +170,14 @@
             width: 100px;
         }
 
-        #titleTextBox {
+        #nameTextBoxEdit {
+            height: 40px;
+            position: fixed;
+            top: 50px;
+            width: 300px;
+        }
+
+        #nameTextBoxCreate {
             height: 40px;
             position: fixed;
             top: 50px;
@@ -202,6 +210,17 @@
             width: 412px;
             z-index: 1;
         }
+        #searchResults {
+          -webkit-overflow-scrolling: touch;
+          width: 412px;
+          height: 590px;
+          position: fixed;
+          overflow-y: scroll;
+          display: none;
+          background-color: #430161;
+          border: 1px white solid;
+          z-index: 2;
+        }
     </style>
 </head>
 
@@ -211,12 +230,11 @@
 
         </button>
 
-        <input id="searchBar" type="text" placeholder="Search">
-        <button id="settingsButton">
-
-        </button>
+        <input id="searchBar" type="text" placeholder="Search" onchange="searchResultsChange()">
+        <button id="settingsButton"></button>
     </div>
     <div id="mainContent">
+      <div id="searchResults"></div>
     </div>
     <div id="spellPage">
         <div id="spellPageHeader">
@@ -225,15 +243,15 @@
         </div>
         <div id="spellPageTitle"></div>
     </div>
-    <div id="spellEdit">
+    <div id="spellEdit"> <!--Page accessed via the spell page of the desired spell. Used to change the data of that spell.-->
         <button onclick="cancelEdit()" id="backButton"></button>
-        Title: <input id="titleTextBox">
-        <button id="submitButton" onclick="submitToStorage()">Submit</button>
+        Name: <input id="nameTextBoxEdit">
+        <button class="submitButton" onclick="submitToStorage()">Submit</button>
     </div>
     <div id="spellCreate">
         <button onclick="cancelCreation()" id="backButton"></button>
-        <input id="titleTextBox">
-        <button id="submitButton" onclick="submitToStorage()"></button>
+        Name: <input id="nameTextBoxCreate">
+        <button class="submitButton" onclick="submitToStorage()"></button>
     </div>
     <div id="footer">
         <button onclick="mainPage()" id="spellListTab"></button>
