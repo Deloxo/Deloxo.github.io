@@ -17,13 +17,14 @@
 
         <input id="searchBar" type="text" placeholder="Search" onchange="searchResultsChange()">
         <button id="settingsButton"></button>
-        <button onclick="mainPage()" id="spellsTab"></button>
-        <button onclick="charactersPage()" id="skillsTab"></button>
-        <button onclick="settingsPage()" id="rulesTab"></button>
+        <button onclick="spellsTab()" id="spellsTabButton"></button>
+        <button onclick="skillsTab()" id="skillsTabButton"></button>
+        <button onclick="rulesTab()" id="rulesTabButton"></button>
     </div>
     <div id="mainContent">
-      <div id="searchResults"></div>
     </div>
+    <div id="skillsTabPage"></div>
+    <div id="rulesTabPage"></div>
     <div id="spellPage">
         <div id="spellPageHeader">
             <button onclick="backToMain()" id="backButton"></button>

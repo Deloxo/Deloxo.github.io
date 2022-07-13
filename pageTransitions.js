@@ -49,6 +49,20 @@ function spellPage(number) {
     document.getElementById("spellPage").style.display = 'initial';
 }
 
+function spellsTab() {
+  document.getElementById("skillsTabPage").style.display = 'none';
+  document.getElementById("rulesTabPage").style.display = 'none';
+}
+
+function skillsTab() {
+  document.getElementById("skillsTabPage").style.display = '';
+  document.getElementById("rulesTabPage").style.display = 'none';
+}
+
+function rulesTab() {
+  document.getElementById("skillsTabPage").style.display = 'none';
+  document.getElementById("rulesTabPage").style.display = '';
+ }
 function searchResultsChange() {
   for (var x = 0; x < Object.keys(JSON.parse(localStorage.spells)).length; x++) {
     document.getElementsByClassName("spell")[x].style.display = '';
