@@ -3,7 +3,7 @@ function searchResults() {
    document.getElementsByClassName("item")[x].style.display = '';
  }
  for (var x = 0; x < Object.keys(JSON.parse(localStorage.spells)).length; x++) {
-     if (Object.values(JSON.parse(localStorage.spells))[x].name.includes(document.getElementById("searchBar").value) == false || Object.values(JSON.parse(localStorage.spells))[x].college.includes(document.getElementById("searchBar").value) == false) {
+     if (Object.values(JSON.parse(localStorage.spells))[x].name.includes(document.getElementById("searchBar").value) == false && Object.values(JSON.parse(localStorage.spells))[x].college.includes(document.getElementById("searchBar").value) == false) {
        document.getElementsByClassName("item")[x].style.display = 'none';
      }
  }
