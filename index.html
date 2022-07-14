@@ -27,21 +27,19 @@ A page is any new menu area that must be backed out of-->
 
       <div id="editPage">
           <button onclick="backToList()" id="backButton"></button>
-          <p>Name: <input id="nameTextBoxEdit">
+          <span id="inputItemSpan">Name<br><input id="inputItemTitle"></span>
           <button id="submitButton" onclick="submitToStorage()">Submit</button>
       </div>
 
       <div id="itemPage">
-          <div id="spellPageHeader">
-              <button onclick="backToList()" id="backButton"></button>
-              <button id="editButton" onclick="editItem()"></button>
-          </div>
+            <button onclick="backToList()" id="backButton"></button>
+            <button id="editButton" onclick="editItem()"></button>
           <div id="itemPageTitle"></div>
       </div>
 
       <div id="createPage">
           <button onclick="backToList()" id="backButton"></button>
-          Name: <input id="nameTextBoxCreate">
+          Name: <input id="inputItemTitle">
           <button class="submitButton" onclick="submitToStorage()"></button>
       </div>
 
@@ -49,7 +47,6 @@ A page is any new menu area that must be backed out of-->
           <button onclick="backToList()" id="backButton"></button>
       </div>
 
-<span width="412">
 
       <div id="spellsTab"></div>
 
@@ -57,9 +54,6 @@ A page is any new menu area that must be backed out of-->
 
       <div id="rulesTab"></div>
 
-</span>
-
-<div width="412">
 
       <div id="listsTab"></div>
 
@@ -67,7 +61,6 @@ A page is any new menu area that must be backed out of-->
 
       <div id="settingsTab"></div>
 
-    </div>
 
     </div>
 
@@ -84,7 +77,8 @@ A page is any new menu area that must be backed out of-->
 
         function addToChar(number) {}
 
-        var spellIndex = -1;
+        var spellIndex = 0;
+        document.getElementById("itemPageTitle").innerHTML = Object.values(spells)[spellIndex].name;
 
         for (var x = 0; x < Object.keys(JSON.parse(localStorage.spells)).length; x++) {
             document.getElementById("spellsTab").innerHTML += '<div class="item" onclick="openItemPage(' + x + ')"><button onclick="addToChar(' + x + ')" id="addToCharacterButton"></button><span class="itemName"></span><br><span class="itemType"></span></div>';

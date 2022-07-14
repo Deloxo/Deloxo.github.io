@@ -1,16 +1,26 @@
 /* A class is the name of any element style that will be reused more than one.
 An ID is the name of any element style that applies uniquely to one element.*/
 
-body, html {
+body {
     background-color: #430161;
     color: white;
     font-family: 'Ubuntu', sans-serif;
     height: 714px;
+    width: 414px;
     margin: 0;
     overflow: hidden;
     padding: 0;
     position: fixed;
-    width: 414px;
+    border: 3px outset red;
+    box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+div, button, span {
+  box-sizing: border-box;
 }
 
 #mainContent {
@@ -20,41 +30,83 @@ body, html {
 #editPage {
   height: 712px;
   width: 412px;
-  left: 0px;
-  top: 0px;
+  left: -2px;
+  top: -2px;
+  border: 2px outset blue;
   position: absolute;
-  display: initial;
+  display: none;
   z-index: 2;
   background-color: #430161;
   border: 1px solid white;
   padding: 20px;
+  box-sizing: border-box;
+}
+
+#editButton {
+    background-image: url("editButton.png");
+    background-size: cover;
+    border: none;
+    height: 50px;
+    width: 50px;
+    top: 5px;
+    left: 359px;
+    position: absolute;
+    box-sizing: border-box;
 }
 
 #createPage {
   height: 712px;
   width: 412px;
-  left: 0px;
-  top: 0px;
+  left: -2px;
+  top: -2px;
+  border: 2px outset blue;
   position: absolute;
   display: none;
   z-index: 2;
   background-color: #430161;
+  box-sizing: border-box;
 }
 
 #itemPage {
   height: 712px;
   width: 412px;
-  left: 0px;
-  top: 0px;
+  left: -2px;
+  top: -2px;
+  border: 2px outset blue;
   position: absolute;
-  display: none;
   z-index: 2;
+  background-color: #430161;
+  display: none;
+  box-sizing: border-box;
+}
+
+#inputItemSpan {
+  top: 60px;
+  position: absolute;
+}
+
+#itemPageTitle {
+  font-size: 30px;
+  left: 30px;
+  top: 60px;
+  position: absolute;
+  box-sizing: border-box;
+}
+
+#inputItemTitle {
+  border-radius: 5px;
+  border: 2px white solid;
+  padding-left: 5px;
+  padding-right: 5px;
+  box-sizing: border-box;
+  height: 40px;
+  width: 320px;
   background-color: #430161;
 }
 
 #filtersPage {
-  height: 712px;
-  width: 412px;
+  height: 714px;
+  width: 414px;
   left: 0px;
   top: 0px;
   position: absolute;
@@ -110,16 +162,17 @@ body, html {
 }
 
 #spellsTab {
-  height: 550px;
-  width: 412px;
-  left: 0px;
-  top: 100px;
+  height: 554px;
+  width: 409px;
+  left: -0.75px;
+  top: 97px;
   position: absolute;
   -webkit-overflow-scrolling: touch;
   overflow-y: scroll;
   z-index: 0;
   display: none;
   display: initial;
+  border: 1px green solid;
 }
 
 #traitsTabButton {
@@ -261,6 +314,7 @@ body, html {
     height: 60px;
     line-height: 20px;
     padding-left: 10px;
+    width: 414px;
 }
 
 .itemName {
@@ -277,16 +331,23 @@ body, html {
 }
 
 #header {
-    border-bottom: 2px #FFF solid;
+    border: 2px #FFF solid;
+    left: -3px;
     height: 100px;
+    width: 414px;
+    position: absolute;
     z-index: 1;
+    top: -3px;
 }
 
 #footer {
-    border-top: 2px #FFF solid;
+    border: 2px #FFF solid;
+    left: -3px;
     height: 60px;
-    width: 412px;
+    width: 414px;
+    position: absolute;
     z-index: 1;
+    top: 651px;
 }
 
 #backButton {
@@ -310,22 +371,6 @@ body, html {
   position: relative;
 }
 
-#editButton {
-    background-image: url("editButton.png");
-    background-size: cover;
-    border: none;
-    height: 50px;
-    width: 50px;
-    top: 5px;
-    left: 709px;
-    position: absolute;
-}
-
-#itemPageTitle {
-    font-size: 30px;
-    margin-left: 30px;
-}
-
 #submitButton {
     transform: translate(-50%);
     background-color: #75249a;
@@ -336,13 +381,6 @@ body, html {
     position: absolute;
     top: 550px;
     width: 100px;
-}
-
-#nameTextBoxEdit {
-    height: 40px;
-    position: fixed;
-    top: 50px;
-    width: 150px;
 }
 
 #nameTextBoxCreate {
