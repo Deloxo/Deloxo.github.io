@@ -23,9 +23,11 @@ body, html {
   left: 0px;
   top: 0px;
   position: absolute;
-  display: none;
+  display: initial;
   z-index: 2;
   background-color: #430161;
+  border: 1px solid white;
+  padding: 20px;
 }
 
 #createPage {
@@ -93,7 +95,7 @@ body, html {
 
 #spellsTabButton {
   background-image: url("spellsTabButton.png");
-  position: fixed;
+  position: absolute;
   transform: translate(-50%);
   background-size: 34px 34px;
   top: 63px;
@@ -122,7 +124,7 @@ body, html {
 
 #traitsTabButton {
   background-image: url("traitsTabButton.png");
-  position: fixed;
+  position: absolute;
   transform: translate(-50%);
   background-size: 34px 34px;
   top: 63px;
@@ -149,7 +151,7 @@ body, html {
 
 #rulesTabButton {
   background-image: url("rulesTabButton.png");
-  position: fixed;
+  position: absolute;
   transform: translate(-50%);
   width: 100px;
   background-color: #430161;
@@ -181,7 +183,7 @@ body, html {
   background-color: #430161;
   background-position: center;
   background-image: url("listsTabButton.png");
-  position: fixed;
+  position: absolute;
   transform: translate(-50%);
   width: 100px;
   background-repeat: no-repeat;
@@ -208,7 +210,7 @@ body, html {
   background-color: #430161;
   background-position: center;
   background-image: url("charactersTabButton.png");
-  position: fixed;
+  position: absolute;
   transform: translate(-50%);
   width: 100px;
   background-repeat: no-repeat;
@@ -232,7 +234,7 @@ body, html {
   margin-top: 5px;
   height: 50px;
   background-image: url("settingsTabButton.png");
-  position: fixed;
+  position: absolute;
   background-color: #430161;
   background-position: center;
   transform: translate(-50%);
@@ -293,6 +295,9 @@ body, html {
     border: none;
     height: 50px;
     width: 50px;
+    top: 5px;
+    left: 5px;
+    position: absolute;
 }
 
 #addToCharacterButton {
@@ -309,10 +314,11 @@ body, html {
     background-image: url("editButton.png");
     background-size: cover;
     border: none;
-    float: right;
     height: 50px;
-    margin-right: 10px;
     width: 50px;
+    top: 5px;
+    left: 709px;
+    position: absolute;
 }
 
 #itemPageTitle {
@@ -321,15 +327,14 @@ body, html {
 }
 
 #submitButton {
-    align-self: center;
+    transform: translate(-50%);
     background-color: #75249a;
     border: none;
     border-radius: 10px;
     height: 40px;
     left: 50%;
-    position: fixed;
+    position: absolute;
     top: 550px;
-    transform: translate(-50%);
     width: 100px;
 }
 
@@ -337,7 +342,7 @@ body, html {
     height: 40px;
     position: fixed;
     top: 50px;
-    width: 300px;
+    width: 150px;
 }
 
 #nameTextBoxCreate {
