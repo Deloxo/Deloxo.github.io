@@ -81,13 +81,56 @@ div, button, span, input {
   background-color: #430161;
   display: none;
   box-sizing: border-box;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 60px;
 }
 
 #itemPageTitle {
   font-size: 30px;
   left: 30px;
-  top: 60px;
-  position: absolute;
+  box-sizing: border-box;
+}
+
+#itemPageCollege {
+  font-size: 15px;
+  left: 30px;
+  box-sizing: border-box;
+}
+
+#itemPageType {
+  font-size: 15px;
+  left: 30px;
+  box-sizing: border-box;
+}
+
+#itemPageDescription {
+  font-size: 15px;
+  left: 30px;
+  box-sizing: border-box;
+}
+
+#itemPageCost {
+  font-size: 15px;
+  left: 30px;
+  box-sizing: border-box;
+}
+
+#itemPageDuration {
+  font-size: 15px;
+  left: 30px;
+  box-sizing: border-box;
+}
+
+#itemPageTimeToCast {
+  font-size: 15px;
+  left: 30px;
+  box-sizing: border-box;
+}
+
+#itemPagePrerequisites {
+  font-size: 15px;
+  left: 30px;
   box-sizing: border-box;
 }
 
