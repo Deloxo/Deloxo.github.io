@@ -11,7 +11,6 @@ body {
     overflow: hidden;
     padding: 0;
     position: fixed;
-    border: 3px outset red;
     box-sizing: border-box;
 }
 
@@ -32,7 +31,6 @@ div, button, span, input {
   width: 412px;
   left: -2px;
   top: -2px;
-  border: 2px outset blue;
   position: absolute;
   display: none;
   z-index: 2;
@@ -62,7 +60,6 @@ div, button, span, input {
   width: 412px;
   left: -2px;
   top: -2px;
-  border: 2px outset blue;
   position: absolute;
   display: none;
   z-index: 2;
@@ -75,7 +72,6 @@ div, button, span, input {
   width: 412px;
   left: -2px;
   top: -2px;
-  border: 2px outset blue;
   position: absolute;
   z-index: 2;
   background-color: #430161;
@@ -334,10 +330,6 @@ div, button, span, input {
   display: none;
 }
 
-.button {
-  border: 1px white solid;
-}
-
 #rulesTabButton {
   background-image: url("rulesTabButton.png");
   position: absolute;
@@ -470,7 +462,7 @@ div, button, span, input {
 }
 
 #header {
-    border: 2px #FFF solid;
+    border-bottom: 2px #FFF solid;
     left: -3px;
     height: 100px;
     width: 414px;
@@ -480,7 +472,7 @@ div, button, span, input {
 }
 
 #footer {
-    border: 2px #FFF solid;
+    border-top: 2px #FFF solid;
     left: -3px;
     height: 60px;
     width: 414px;
