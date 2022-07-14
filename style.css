@@ -300,7 +300,6 @@ div, button, span, input {
   z-index: 0;
   display: none;
   display: initial;
-  border: 1px green solid;
 }
 
 #traitsTabButton {
