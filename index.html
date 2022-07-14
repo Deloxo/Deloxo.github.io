@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
 
+<!--a tab is any new menu area that leaves naviation to other menu areas unobstrucuted.
+A page is any new menu area that must be backed out of-->
+
 <head>
     <meta name="viewport" content="width=device-width, user-scalable=no">
     <meta charset="utf-8">
@@ -10,46 +13,64 @@
 </head>
 
 <body>
+
     <div id="header">
-        <button id="createNewSpellButton" onclick="createSpell()">
-
-        </button>
-
-        <input id="searchBar" type="text" placeholder="Search" onchange="searchResultsChange()">
-        <button id="settingsButton"></button>
-        <button onclick="spellsTab()" id="spellsTabButton"></button>
-        <button onclick="skillsTab()" id="skillsTabButton"></button>
-        <button onclick="rulesTab()" id="rulesTabButton"></button>
+        <!--New Spell Button--> <button onclick="openCreatePage()" id="createPageButton"></button>
+        <!--Header--> <input onchange="searchResults()" id="searchBar" type="text" placeholder=" Search">
+        <!--Filters Button--> <button onclick="openFiltersPage()" id="filtersPageButton"></button>
+        <!--Spells Tab--> <button onclick="openSpellsTab()" id="spellsTabButton"></button>
+        <!--Traits Tab--> <button onclick="openTraitsTab()" id="traitsTabButton"></button>
+        <!--Rules Tab--> <button onclick="openRulesTab()" id="rulesTabButton"></button>
     </div>
+
     <div id="mainContent">
+
+      <div id="editPage">
+          <button onclick="backToList()" id="backButton"></button>
+          Name: <input id="nameTextBoxEdit">
+          <button class="submitButton" onclick="submitToStorage()">Submit</button>
+      </div>
+
+      <div id="itemPage">
+          <div id="spellPageHeader">
+              <button onclick="backToList()" id="backButton"></button>
+              <button id="editButton" onclick="editItem()"></button>
+          </div>
+          <div id="itemPageTitle"></div>
+      </div>
+
+      <div id="createPage">
+          <button onclick="backToList()" id="backButton"></button>
+          Name: <input id="nameTextBoxCreate">
+          <button class="submitButton" onclick="submitToStorage()"></button>
+      </div>
+
+      <div id="filtersPage">
+          <button onclick="backToList()" id="backButton"></button>
+      </div>
+
+      <div id="spellsTab"></div>
+
+      <div id="traitsTab">test</div>
+
+      <div id="rulesTab"></div>
+
+      <div id="listsTab"></div>
+
+      <div id="charactersTab"></div>
+
+      <div id="settingsTab"></div>
+
     </div>
-    <div id="skillsTabPage"></div>
-    <div id="rulesTabPage"></div>
-    <div id="spellPage">
-        <div id="spellPageHeader">
-            <button onclick="backToMain()" id="backButton"></button>
-            <button id="editButton" onclick="editSpell()"></button>
-        </div>
-        <div id="spellPageTitle"></div>
-    </div>
-    <div id="spellEdit"> <!--Page accessed via the spell page of the desired spell. Used to change the data of that spell.-->
-        <button onclick="cancelEdit()" id="backButton"></button>
-        Name: <input id="nameTextBoxEdit">
-        <button class="submitButton" onclick="submitToStorage()">Submit</button>
-    </div>
-    <div id="spellCreate">
-        <button onclick="cancelCreation()" id="backButton"></button>
-        Name: <input id="nameTextBoxCreate">
-        <button class="submitButton" onclick="submitToStorage()"></button>
-    </div>
+
     <div id="footer">
-        <button onclick="mainPage()" id="spellListTab"></button>
-        <button onclick="charactersPage()" id="charactersTab"></button>
-        <button onclick="settingsPage()" id="settingsTab"></button>
+        <!--Lists Page Button--> <button onclick="openListsTab()" id="listsTabButton"></button>
+        <!--Characters Page Button--> <button onclick="openCharactersTab()" id="charactersTabButton"></button>
+        <!--Settings Page Button--> <button onclick="openSettingsTab()" id="settingsTabButton"></button>
     </div>
-    <div id="charactersPage"></div>
-    <div id="settingsPage"></div>
+
     <script src="pageTransitions.js"></script>
+
     <script>
         var spells = JSON.parse(localStorage.spells);
 
@@ -57,15 +78,10 @@
 
         var spellIndex = -1;
 
-        function backToMain() {
-            spellIndex = -1;
-            document.getElementById("spellPage").style.display = 'none';
-        }
-
         for (var x = 0; x < Object.keys(JSON.parse(localStorage.spells)).length; x++) {
-            document.getElementById("mainContent").innerHTML += '<div class="spell" onclick="spellPage(' + x + ')"><button onclick="addToChar(' + x + ')" id="charAddButton"></button><span class="spellTitle"></span><br><span class="spellCollege"></span></div>';
-            document.getElementsByClassName("spellTitle")[x].innerHTML = Object.values(JSON.parse(localStorage.spells))[x].name;
-            document.getElementsByClassName("spellCollege")[x].innerHTML = Object.values(JSON.parse(localStorage.spells))[x].college;
+            document.getElementById("spellsTab").innerHTML += '<div class="item" onclick="openItemPage(' + x + ')"><button onclick="addToChar(' + x + ')" id="addToCharacterButton"></button><span class="itemName"></span><br><span class="itemType"></span></div>';
+            document.getElementsByClassName("itemName")[x].innerHTML = Object.values(JSON.parse(localStorage.spells))[x].name;
+            document.getElementsByClassName("itemType")[x].innerHTML = Object.values(JSON.parse(localStorage.spells))[x].college;
         }
     </script>
 </body>

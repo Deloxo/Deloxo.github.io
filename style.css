@@ -1,8 +1,11 @@
+/* A class is the name of any element style that will be reused more than one.
+An ID is the name of any element style that applies uniquely to one element.*/
+
 body, html {
     background-color: #430161;
     color: white;
     font-family: 'Ubuntu', sans-serif;
-    height: 750px;
+    height: 714px;
     margin: 0;
     overflow: hidden;
     padding: 0;
@@ -11,99 +14,61 @@ body, html {
     border: 2px solid white;
 }
 
-.spell {
-    border-bottom: 1px solid gray;
-    font-size: 25px;
-    height: 60px;
-    line-height: 20px;
-    padding-left: 10px;
-    padding-top: 10px;
-}
-
-.spellCollege {
-    font-size: 18px;
-    left: 70px;
-    position: relative;
-    top: -25px;
-}
-
-.spellTitle {
-    left: 10px;
-    position: relative;
-    top: -25px;
-}
-
-#backButton {
-    background-image: url("backButton.png");
-    background-size: cover;
-    border: none;
-    height: 50px;
-    width: 50px;
-}
-
-#charAddButton {
-    background-image: url("addToCharButton.png");
-    background-size: cover;
-    border: none;
-    height: 50px;
-    position: relative;
-    width: 50px;
-}
-
-#charactersTab {
-    background-image: url("charactersTab.png");
-    background-repeat: no-repeat;
-    border-radius: 5px;
-    background-position: center;
-    background-color: #430161;
-    background-size: 50px 50px;
-    border: none;
-    height: 50px;
-    left: 50%;
-    margin-top: 10px;
-    position: fixed;
-    transform: translate(-50%);
-    width: 100px;
-}
-
-#createNewSpellButton {
-    background-image: url("newSpellButton.png");
-    background-size: cover;
-}
-
-#createNewSpellButton,
-#settingsButton {
-    border: none;
-    height: 50px;
-    margin: 5px;
-    width: 50px;
-}
-
-#editButton {
-    background-image: url("editButton.png");
-    background-size: cover;
-    border: none;
-    float: right;
-    height: 50px;
-    margin-right: 10px;
-    width: 50px;
-}
-
-#footer {
-    border-top: 2px #FFF solid;
-    height: 60px;
-    width: 412px;
-}
-
-#header {
-    border-bottom: 2px #FFF solid;
-    height: 100px;
-}
-
 #mainContent {
-    -webkit-overflow-scrolling: touch;
-    height: 550px;
-    overflow-y: scroll;
+  height: 550px;
+}
+
+#editPage {
+  height: 712px;
+  width: 412px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+  display: none;
+  z-index: 2;
+  background-color: #430161;
+}
+
+#createPage {
+  height: 712px;
+  width: 412px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+  display: none;
+  z-index: 2;
+  background-color: #430161;
+}
+
+#itemPage {
+  height: 712px;
+  width: 412px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+  display: none;
+  z-index: 2;
+  background-color: #430161;
+}
+
+#filtersPage {
+  height: 712px;
+  width: 412px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+  display: none;
+  z-index: 2;
+  background-color: #430161;
+}
+
+#createPageButton {
+  border: none;
+  height: 50px;
+  margin: 5px;
+  width: 50px;
+  background-image: url("createPageButton.png");
+  background-size: cover;
 }
 
 #searchBar {
@@ -118,50 +83,245 @@ body, html {
     color: white;
 }
 
-#settingsButton {
-    background-image: url("filterSettingsButton.png");
-    background-size: cover;
+#filtersPageButton {
+  border: none;
+  height: 50px;
+  margin: 5px;
+  width: 50px;
+  background-image: url("filtersPageButton.png");
+  background-size: cover;
+}
+
+#spellsTabButton {
+  background-image: url("spellsTabButton.png");
+  position: fixed;
+  transform: translate(-50%);
+  background-size: 34px 34px;
+  top: 63px;
+  height: 34px;
+  width: 100px;
+  background-repeat: no-repeat;
+  border: none;
+  left: 25%;
+  background-color: #430161;
+  background-position: center;
+  border: 1px #760f78 solid;
+}
+
+#spellsTab {
+  height: 550px;
+  width: 412px;
+  left: 0px;
+  top: 100px;
+  position: absolute;
+  -webkit-overflow-scrolling: touch;
+  overflow-y: scroll;
+  z-index: 0;
+  display: none;
+  display: initial;
+}
+
+#traitsTabButton {
+  background-image: url("traitsTabButton.png");
+  position: fixed;
+  transform: translate(-50%);
+  background-size: 34px 34px;
+  top: 63px;
+  height: 34px;
+  background-color: #430161;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: none;
+  width: 100px;
+  left: 50%;
+}
+
+#traitsTab {
+  height: 550px;
+  width: 412px;
+  left: 0px;
+  top: 100px;
+  position: absolute;
+  -webkit-overflow-scrolling: touch;
+  overflow-y: scroll;
+  z-index: 0;
+  display: none;
+}
+
+#rulesTabButton {
+  background-image: url("rulesTabButton.png");
+  position: fixed;
+  transform: translate(-50%);
+  width: 100px;
+  background-color: #430161;
+  background-position: center;
+  background-size: 34px 34px;
+  top: 63px;
+  background-repeat: no-repeat;
+  border: none;
+  height: 34px;
+  left: 75%;
+}
+
+#rulesTab {
+  height: 550px;
+  width: 412px;
+  left: 0px;
+  top: 100px;
+  position: absolute;
+  -webkit-overflow-scrolling: touch;
+  overflow-y: scroll;
+  z-index: 0;
+  display: none;
+}
+
+#listsTabButton {
+  background-size: 50px 50px;
+  margin-top: 5px;
+  height: 50px;
+  background-color: #430161;
+  background-position: center;
+  background-image: url("listsTabButton.png");
+  position: fixed;
+  transform: translate(-50%);
+  width: 100px;
+  background-repeat: no-repeat;
+  border: none;
+  left: 25%;
+  border: 3px #760f78 solid;
+}
+
+#listsTab {
+  height: 650px;
+  width: 412px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+  background-color: #430161;
+  display: none;
+  z-index: 1;
+}
+
+#charactersTabButton {
+  background-size: 50px 50px;
+  margin-top: 5px;
+  height: 50px;
+  background-color: #430161;
+  background-position: center;
+  background-image: url("charactersTabButton.png");
+  position: fixed;
+  transform: translate(-50%);
+  width: 100px;
+  background-repeat: no-repeat;
+  border: none;
+  left: 50%;
+}
+
+#charactersTab {
+  height: 650px;
+  width: 412px;
+  left: 0px;
+  top: 0px;
+  display: none;
+  position: absolute;
+  background-color: #430161;
+  z-index: 1;
+}
+
+#settingsTabButton {
+  background-size: 50px 50px;
+  margin-top: 5px;
+  height: 50px;
+  background-image: url("settingsTabButton.png");
+  position: fixed;
+  background-color: #430161;
+  background-position: center;
+  transform: translate(-50%);
+  width: 100px;
+  background-repeat: no-repeat;
+  border: none;
+  left: 75%;
 }
 
 #settingsTab {
-    background-image: url("settingsTab.png");
-    background-repeat: no-repeat;
-    border-radius: 5px;
-    background-position: center;
-    background-color: #430161;
-    background-size: 50px 50px;
-    border: none;
-    height: 50px;
-    left: 75%;
-    margin-top: 10px;
-    position: fixed;
-    transform: translate(-50%);
-    width: 100px;
+  height: 650px;
+  width: 412px;
+  left: 0px;
+  top: 0px;
+  display: none;
+  background-color: #430161;
+  position: absolute;
+  z-index: 1;
 }
 
-#spellListTab {
-    background-image: url("spellListTab.png");
-    background-repeat: no-repeat;
-    border-radius: 5px;
-    background-position: center;
-    background-color: #430161;
-    background-size: 50px 50px;
-    border: none;
-    height: 50px;
-    left: 25%;
-    margin-top: 10px;
-    position: fixed;
-    transform: translate(-50%);
-    width: 100px;
-    border: 3px #760f78 solid;
+.item {
+    border-bottom: 1px solid gray;
+    font-size: 25px;
+    height: 60px;
+    line-height: 20px;
+    padding-left: 10px;
 }
 
-#spellPageTitle {
+.itemName {
+    left: 10px;
+    position: relative;
+    top: -25px;
+}
+
+.itemType {
+    font-size: 18px;
+    left: 70px;
+    position: relative;
+    top: -25px;
+}
+
+#header {
+    border-bottom: 2px #FFF solid;
+    height: 100px;
+    z-index: 1;
+}
+
+#footer {
+    border-top: 2px #FFF solid;
+    height: 60px;
+    width: 412px;
+    z-index: 1;
+}
+
+#backButton {
+    background-image: url("backButton.png");
+    background-size: cover;
+    border: none;
+    height: 50px;
+    width: 50px;
+}
+
+#addToCharacterButton {
+  border: none;
+  height: 50px;
+  margin: 5px;
+  width: 50px;
+  background-image: url("addToCharButton.png");
+  background-size: cover;
+  position: relative;
+}
+
+#editButton {
+    background-image: url("editButton.png");
+    background-size: cover;
+    border: none;
+    float: right;
+    height: 50px;
+    margin-right: 10px;
+    width: 50px;
+}
+
+#itemPageTitle {
     font-size: 30px;
     margin-left: 30px;
 }
 
-.submitButton {
+#submitButton {
     align-self: center;
     background-color: #75249a;
     border: none;
@@ -186,104 +346,4 @@ body, html {
     position: fixed;
     top: 50px;
     width: 300px;
-}
-
-#charactersPage,
-#settingsPage {
-    background-color: #430161;
-    border: 1px #FFF solid;
-    display: none;
-    height: 651px;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 412px;
-    z-index: 1;
-}
-
-#spellCreate,
-#spellEdit,
-#spellPage {
-    background-color: #430161;
-    border: 1px #FFF solid;
-    display: none;
-    height: 714px;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 412px;
-    z-index: 1;
-}
-
-#spellsTabButton {
-    background-image: url("spellsTabButton.png");
-    background-repeat: no-repeat;
-    border-radius: 5px;
-    background-position: center;
-    background-color: #430161;
-    background-size: 34px 34px;
-    border: none;
-    height: 34px;
-    left: 25%;
-    top: 63px;
-    position: fixed;
-    transform: translate(-50%);
-    width: 100px;
-    border: 1px #760f78 solid;
-}
-
-#skillsTabButton {
-  background-image: url("skillsTabButton.png");
-  background-repeat: no-repeat;
-  border-radius: 5px;
-  background-position: center;
-  background-color: #430161;
-  background-size: 34px 34px;
-  border: none;
-  height: 34px;
-  left: 50%;
-  top: 63px;
-  position: fixed;
-  transform: translate(-50%);
-  width: 100px;
-}
-
-#rulesTabButton {
-  background-image: url("rulesTabButton.png");
-  background-repeat: no-repeat;
-  border-radius: 5px;
-  background-position: center;
-  background-color: #430161;
-  background-size: 34px 34px;
-  border: none;
-  height: 34px;
-  left: 75%;
-  top: 63px;
-  position: fixed;
-  transform: translate(-50%);
-  width: 100px;
-}
-
-#skillsTabPage {
-    background-color: #430161;
-    border: 1px #FFF solid;
-    display: none;
-    height: 651px;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 412px;
-    z-index: 1;
-}
-
-#rulesTabPage {
-    background-color: #430161;
-    border: 1px #FFF solid;
-    display: none;
-    height: 651px;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 412px;
-    z-index: 1;
 }
