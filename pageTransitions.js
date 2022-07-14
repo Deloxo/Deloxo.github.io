@@ -76,16 +76,25 @@ function openSpellsTab() {
   document.getElementById("spellsTab").style.display = 'initial';
   document.getElementById("traitsTab").style.display = 'none';
   document.getElementById("rulesTab").style.display = 'none';
+  document.getElementById("spellsTabButton").style.border = '3px #760f78 solid';
+  document.getElementById("traitsTabButton").style.border = 'none';
+  document.getElementById("rulesTabButton").style.border = 'none';
 }
 
 function openTraitsTab() {
   document.getElementById("spellsTab").style.display = 'none';
   document.getElementById("traitsTab").style.display = 'initial';
   document.getElementById("rulesTab").style.display = 'none';
+  document.getElementById("spellsTabButton").style.border = 'none';
+  document.getElementById("traitsTabButton").style.border = '3px #760f78 solid';
+  document.getElementById("rulesTabButton").style.border = 'none';
 }
 
 function openRulesTab() {
   document.getElementById("spellsTab").style.display = 'none';
   document.getElementById("traitsTab").style.display = 'none';
   document.getElementById("rulesTab").style.display = 'initial';
+  document.getElementById("spellsTabButton").style.border = 'none';
+  document.getElementById("traitsTabButton").style.border = 'none';
+  document.getElementById("rulesTabButton").style.border = '3px #760f78 solid';
  }
