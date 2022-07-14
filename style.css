@@ -19,7 +19,7 @@ body {
   width: 0px;
 }
 
-div, button, span {
+div, button, span, input {
   box-sizing: border-box;
 }
 
@@ -38,18 +38,21 @@ div, button, span {
   z-index: 2;
   background-color: #430161;
   border: 1px solid white;
-  padding: 20px;
+  padding: 40px;
   box-sizing: border-box;
 }
 
 #editButton {
     background-image: url("editButton.png");
-    background-size: cover;
+    background-size: 40px 40px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #430161;
     border: none;
     height: 50px;
     width: 50px;
     top: 5px;
-    left: 359px;
+    left: 354px;
     position: absolute;
     box-sizing: border-box;
 }
@@ -80,11 +83,6 @@ div, button, span {
   box-sizing: border-box;
 }
 
-#inputItemSpan {
-  top: 60px;
-  position: absolute;
-}
-
 #itemPageTitle {
   font-size: 30px;
   left: 30px;
@@ -93,14 +91,99 @@ div, button, span {
   box-sizing: border-box;
 }
 
-#inputItemTitle {
+#inputItemTitle, #inputItemType, #inputItemCollege, #inputItemDescription, #inputItemCost, #inputItemDuration, #inputItemTimeToCast, #inputItemPrerequisites {
   border-radius: 5px;
   border: 2px white solid;
   padding-left: 5px;
   padding-right: 5px;
   box-sizing: border-box;
   height: 40px;
-  width: 320px;
+  position: absolute;
+  width: 328px;
+  background-color: #430161;
+  color: white;
+}
+
+.labelSpan {
+  position: absolute;
+  left: 50px;
+}
+
+#inputItemTitle {
+  top: 60px;
+}
+
+.inputItemTitleSpan {
+  top: 40px;
+}
+
+#inputItemCollege {
+  top: 120px;
+}
+
+.inputItemCollegeSpan {
+  top: 100px;
+}
+
+#inputItemType {
+  top: 180px;
+}
+
+.inputItemTypeSpan {
+  top: 160px;
+}
+
+#inputItemDescription {
+  top: 240px;
+  height: 200px;
+}
+
+.inputItemDescriptionSpan {
+  top: 220px;
+}
+
+#inputItemCost {
+  top: 460px;
+
+}
+
+.inputItemCostSpan {
+  top: 440px;
+}
+
+#inputItemDuration {
+  top: 520px;
+
+}
+
+.inputItemDurationSpan {
+  top: 500px;
+}
+
+#inputItemTimeToCast {
+  top: 580px;
+
+}
+
+.inputItemTimeToCastSpan {
+  top: 560px;
+}
+
+#inputItemPrerequisites {
+  top: 640px;
+}
+
+.inputItemPrerequisitesSpan {
+  top: 620px;
+}
+
+.itemInput {
+  border-radius: 5px;
+  border: 2px white solid;
+  padding-left: 5px;
+  padding-right: 5px;
+  width: 328px;
+  box-sizing: border-box;
   background-color: #430161;
 }
 
@@ -121,7 +204,10 @@ div, button, span {
   margin: 5px;
   width: 50px;
   background-image: url("createPageButton.png");
-  background-size: cover;
+  background-size: 40px 40px;
+  background-color: #430161;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 #searchBar {
@@ -129,6 +215,7 @@ div, button, span {
     border: 2px solid #FFF;
     border-radius: 45px;
     font-size: 15px;
+    padding-left: 5px;
     height: 30px;
     position: relative;
     top: -20px;
@@ -142,7 +229,10 @@ div, button, span {
   margin: 5px;
   width: 50px;
   background-image: url("filtersPageButton.png");
-  background-size: cover;
+  background-size: 40px 40px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #430161;
 }
 
 #spellsTabButton {
@@ -150,11 +240,10 @@ div, button, span {
   position: absolute;
   transform: translate(-50%);
   background-size: 34px 34px;
-  top: 63px;
+  top: 56px;
   height: 34px;
   width: 100px;
   background-repeat: no-repeat;
-  border: none;
   left: 25%;
   background-color: #430161;
   background-position: center;
@@ -180,7 +269,7 @@ div, button, span {
   position: absolute;
   transform: translate(-50%);
   background-size: 34px 34px;
-  top: 63px;
+  top: 56px;
   height: 34px;
   background-color: #430161;
   background-position: center;
@@ -202,6 +291,10 @@ div, button, span {
   display: none;
 }
 
+.button {
+  border: 1px white solid;
+}
+
 #rulesTabButton {
   background-image: url("rulesTabButton.png");
   position: absolute;
@@ -210,7 +303,7 @@ div, button, span {
   background-color: #430161;
   background-position: center;
   background-size: 34px 34px;
-  top: 63px;
+  top: 56px;
   background-repeat: no-repeat;
   border: none;
   height: 34px;
@@ -230,8 +323,9 @@ div, button, span {
 }
 
 #listsTabButton {
-  background-size: 50px 50px;
-  margin-top: 5px;
+  background-size: 40px 40px;
+  margin-top: 3px;
+  border-radius: 4px;
   height: 50px;
   background-color: #430161;
   background-position: center;
@@ -257,8 +351,9 @@ div, button, span {
 }
 
 #charactersTabButton {
-  background-size: 50px 50px;
-  margin-top: 5px;
+  background-size: 40px 40px;
+  margin-top: 3px;
+  border-radius: 4px;
   height: 50px;
   background-color: #430161;
   background-position: center;
@@ -283,8 +378,9 @@ div, button, span {
 }
 
 #settingsTabButton {
-  background-size: 50px 50px;
-  margin-top: 5px;
+  background-size: 40px 40px;
+  margin-top: 3px;
+  border-radius: 4px;
   height: 50px;
   background-image: url("settingsTabButton.png");
   position: absolute;
@@ -352,7 +448,10 @@ div, button, span {
 
 #backButton {
     background-image: url("backButton.png");
-    background-size: cover;
+    background-size: 40px 40px;
+    background-color: #430161;
+    background-position: center;
+    background-repeat: no-repeat;
     border: none;
     height: 50px;
     width: 50px;
@@ -366,8 +465,11 @@ div, button, span {
   height: 50px;
   margin: 5px;
   width: 50px;
+  background-size: 35px 35px;
+  background-position: center;
+  background-color: #430161;
+  background-repeat: no-repeat;
   background-image: url("addToCharButton.png");
-  background-size: cover;
   position: relative;
 }
 
@@ -377,9 +479,9 @@ div, button, span {
     border: none;
     border-radius: 10px;
     height: 40px;
-    left: 50%;
+    left: 359px;
     position: absolute;
-    top: 550px;
+    top: 5px;
     width: 100px;
 }
 

@@ -9,6 +9,18 @@ function searchResults() {
  }
 }
 
+function submitToStorage() {
+  Object.values(spells)[spellIndex].name = document.getElementById("inputItemTitle").value;
+  Object.values(spells)[spellIndex].college = document.getElementById("inputItemCollege").value;
+  Object.values(spells)[spellIndex].type = document.getElementById("inputItemType").value;
+  Object.values(spells)[spellIndex].description = document.getElementById("inputItemDescription").value;
+  Object.values(spells)[spellIndex].cost = document.getElementById("inputItemCost").value;
+  Object.values(spells)[spellIndex].duration = document.getElementById("inputItemDuration").value;
+  Object.values(spells)[spellIndex].timeToCast = document.getElementById("inputItemTimeToCast").value;
+  Object.values(spells)[spellIndex].prerequisites = document.getElementById("inputItemPrerequisites").value;
+  localStorage.spells = JSON.stringify(spells);
+}
+
 function backToList() {
   document.getElementById("itemPage").style.display = 'none';
   document.getElementById("filtersPage").style.display = 'none';
@@ -58,13 +70,27 @@ function openFiltersPage() {
 function openItemPage(number) {
     itemIndex = number;
     document.getElementById("itemPageTitle").innerHTML = Object.values(spells)[number].name;
+    document.getElementById("itemPageCollege").innerHTML = Object.values(spells)[number].college;
+    document.getElementById("itemPageType").innerHTML = Object.values(spells)[number].type;
+    document.getElementById("itemPageDescription").innerHTML = Object.values(spells)[number].description;
+    document.getElementById("itemPageCost").innerHTML = Object.values(spells)[number].cost;
+    document.getElementById("itemPageDuration").innerHTML = Object.values(spells)[number].duration;
+    document.getElementById("itemPageTimeToCast").innerHTML = Object.values(spells)[number].timeToCast;
+    document.getElementById("itemPagePrerequisites").innerHTML = Object.values(spells)[number].prerequisites;
     document.getElementById("itemPage").style.display = 'initial';
 }
 
 function editItem() {
     document.getElementById("itemPage").style.display = 'none';
     document.getElementById("editPage").style.display = 'initial';
-    document.getElementById("nameTextBoxEdit").value = Object.values(spells)[spellIndex].name;
+    document.getElementById("inputItemTitle").value = Object.values(spells)[spellIndex].name;
+    document.getElementById("inputItemCollege").value = Object.values(spells)[spellIndex].college;
+    document.getElementById("inputItemType").value = Object.values(spells)[spellIndex].type;
+    document.getElementById("inputItemDescription").value = Object.values(spells)[spellIndex].description;
+    document.getElementById("inputItemCost").value = Object.values(spells)[spellIndex].cost;
+    document.getElementById("inputItemDuration").value = Object.values(spells)[spellIndex].duration;
+    document.getElementById("inputItemTimeToCast").value = Object.values(spells)[spellIndex].timeToCast;
+    document.getElementById("inputItemPrerequisites").value = Object.values(spells)[spellIndex].prerequisites;
 }
 
 function cancelEdit() {
