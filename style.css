@@ -23,11 +23,12 @@ body {
     height: 714px;
     width: 414px;
     margin: 0;
-    overflow-x: hidden;
     padding: 0;
     position: fixed;
     box-sizing: border-box;
     border: 1px solid white;
+    -webkit-overflow-scrolling: touch;
+    overflow-y: scroll;
 }
 
 ::-webkit-scrollbar {
@@ -312,8 +313,6 @@ div, button, span, input {
   left: -0.75px;
   top: 97px;
   position: absolute;
-  -webkit-overflow-scrolling: touch;
-  overflow-y: scroll;
   z-index: 0;
   display: none;
   display: initial;
