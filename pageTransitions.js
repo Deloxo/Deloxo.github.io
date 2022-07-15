@@ -9,6 +9,10 @@ function searchResults() {
  }
 }
 
+function outputStorage() {
+  document.getElementById("localStorageOutput").value = localStorage.spells;
+}
+
 function submitToStorage() {
   Object.values(spells)[spellIndex].name = document.getElementById("inputItemTitle").value;
   Object.values(spells)[spellIndex].college = document.getElementById("inputItemCollege").value;

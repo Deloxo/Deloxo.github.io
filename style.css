@@ -9,6 +9,15 @@ An ID is the name of any element style that applies uniquely to one element.*/
   position: absolute;
 }
 
+#localStorageOutput {
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+  position: absolute;
+  width: 300px;
+  height: 500px;
+}
+
 body {
     background-color: #430161;
     color: white;
