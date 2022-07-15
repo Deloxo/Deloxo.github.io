@@ -18,7 +18,7 @@ An ID is the name of any element style that applies uniquely to one element.*/
 
 @font-face {
   font-family: 'BaldurRegular';
-  src: url('Baldur Regular.ttf') format('ttf');
+  src: url('Baldur Regular.ttf') format('truetype');
 }
 
 body {
@@ -279,7 +279,7 @@ div, button, span, input {
     height: 30px;
     position: relative;
     top: -20px;
-    width: 285px;
+    width: 281px;
     color: black;
 }
 
