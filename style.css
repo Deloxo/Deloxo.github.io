@@ -17,8 +17,8 @@ An ID is the name of any element style that applies uniquely to one element.*/
 }
 
 body {
-    background-color: #430161;
-    color: white;
+    background-color: #f9e5b3;
+    color: black;
     font-family: 'Ubuntu', sans-serif;
     height: 714px;
     width: 414px;
@@ -26,7 +26,7 @@ body {
     padding: 0;
     position: fixed;
     box-sizing: border-box;
-    border: 1px solid white;
+    border: 1px solid black;
     overflow-y: scroll;
 }
 
@@ -50,8 +50,8 @@ div, button, span, input {
   position: absolute;
   display: none;
   z-index: 2;
-  background-color: #430161;
-  border: 1px solid white;
+  background-color: #f9e5b3;
+  border: 1px solid black;
   padding: 40px;
   box-sizing: border-box;
 }
@@ -61,7 +61,7 @@ div, button, span, input {
     background-size: 40px 40px;
     background-repeat: no-repeat;
     background-position: center;
-    background-color: #430161;
+    background-color: #f9e5b3;
     border: none;
     height: 50px;
     width: 50px;
@@ -79,7 +79,7 @@ div, button, span, input {
   position: absolute;
   display: none;
   z-index: 2;
-  background-color: #430161;
+  background-color: #f9e5b3;
   box-sizing: border-box;
 }
 
@@ -90,7 +90,7 @@ div, button, span, input {
   top: -2px;
   position: absolute;
   z-index: 2;
-  background-color: #430161;
+  background-color: #f9e5b3;
   display: none;
   box-sizing: border-box;
   padding-left: 40px;
@@ -148,15 +148,15 @@ div, button, span, input {
 
 #inputItemTitle, #inputItemType, #inputItemCollege, #inputItemDescription, #inputItemCost, #inputItemDuration, #inputItemTimeToCast, #inputItemPrerequisites {
   border-radius: 5px;
-  border: 2px white solid;
+  border: 2px black solid;
   padding-left: 5px;
   padding-right: 5px;
   box-sizing: border-box;
   height: 40px;
   position: absolute;
   width: 328px;
-  background-color: #430161;
-  color: white;
+  background-color: #f9e5b3;
+  color: black;
 }
 
 .labelSpan {
@@ -234,12 +234,12 @@ div, button, span, input {
 
 .itemInput {
   border-radius: 5px;
-  border: 2px white solid;
+  border: 2px black solid;
   padding-left: 5px;
   padding-right: 5px;
   width: 328px;
   box-sizing: border-box;
-  background-color: #430161;
+  background-color: #f9e5b3;
 }
 
 #filtersPage {
@@ -250,7 +250,7 @@ div, button, span, input {
   position: absolute;
   display: none;
   z-index: 2;
-  background-color: #430161;
+  background-color: #f9e5b3;
 }
 
 #createPageButton {
@@ -260,14 +260,14 @@ div, button, span, input {
   width: 50px;
   background-image: url("createPageButton.png");
   background-size: 40px 40px;
-  background-color: #430161;
+  background-color: #f9e5b3;
   background-position: center;
   background-repeat: no-repeat;
 }
 
 #searchBar {
-    background-color: #430161;
-    border: 2px solid #FFF;
+    background-color: #f9e5b3;
+    border: 2px solid black;
     border-radius: 45px;
     font-size: 15px;
     padding-left: 5px;
@@ -275,7 +275,7 @@ div, button, span, input {
     position: relative;
     top: -20px;
     width: 285px;
-    color: white;
+    color: black;
 }
 
 #filtersPageButton {
@@ -287,7 +287,7 @@ div, button, span, input {
   background-size: 40px 40px;
   background-repeat: no-repeat;
   background-position: center;
-  background-color: #430161;
+  background-color: #f9e5b3;
 }
 
 #spellsTabButton {
@@ -302,8 +302,8 @@ div, button, span, input {
   background-repeat: no-repeat;
   left: 25%;
   background-position: center;
-  border: 2px white solid;
-  border-bottom: 2px #430161 solid;
+  border: 2px black solid;
+  border-bottom: 2px #f9e5b3 solid;
 }
 
 #spellsTab {
@@ -328,7 +328,7 @@ div, button, span, input {
   height: 40px;
   background-position: center;
   background-repeat: no-repeat;
-  border: 2px white solid;
+  border: 2px black solid;
   border-bottom: none;
   width: 100px;
   left: 50%;
@@ -355,7 +355,7 @@ div, button, span, input {
   background-size: 34px 34px;
   top: 60px;
   background-repeat: no-repeat;
-  border: 2px white solid;
+  border: 2px black solid;
   border-bottom: none;
   height: 40px;
   left: 75%;
@@ -377,7 +377,7 @@ div, button, span, input {
   margin-top: 3px;
   border-radius: 4px;
   height: 50px;
-  background-color: #430161;
+  background-color: #f9e5b3;
   background-position: center;
   background-image: url("listsTabButton.png");
   position: absolute;
@@ -386,7 +386,7 @@ div, button, span, input {
   background-repeat: no-repeat;
   border: none;
   left: 25%;
-  border: 3px #760f78 solid;
+  border: 3px black solid;
 }
 
 #listsTab {
@@ -395,7 +395,7 @@ div, button, span, input {
   left: 0px;
   top: 0px;
   position: absolute;
-  background-color: #430161;
+  background-color: #f9e5b3;
   display: none;
   z-index: 1;
 }
@@ -405,7 +405,7 @@ div, button, span, input {
   margin-top: 3px;
   border-radius: 4px;
   height: 50px;
-  background-color: #430161;
+  background-color: #f9e5b3;
   background-position: center;
   background-image: url("charactersTabButton.png");
   position: absolute;
@@ -423,7 +423,7 @@ div, button, span, input {
   top: 0px;
   display: none;
   position: absolute;
-  background-color: #430161;
+  background-color: #f9e5b3;
   z-index: 1;
 }
 
@@ -434,7 +434,7 @@ div, button, span, input {
   height: 50px;
   background-image: url("settingsTabButton.png");
   position: absolute;
-  background-color: #430161;
+  background-color: #f9e5b3;
   background-position: center;
   transform: translate(-50%);
   width: 100px;
@@ -449,7 +449,7 @@ div, button, span, input {
   left: 0px;
   top: 0px;
   display: none;
-  background-color: #430161;
+  background-color: #f9e5b3;
   position: absolute;
   z-index: 1;
 }
@@ -477,7 +477,7 @@ div, button, span, input {
 }
 
 #header {
-    border-bottom: 2px #FFF solid;
+    border-bottom: 2px black solid;
     left: -3px;
     height: 100px;
     width: 414px;
@@ -487,7 +487,7 @@ div, button, span, input {
 }
 
 #footer {
-    border-top: 2px #FFF solid;
+    border-top: 2px black solid;
     left: -3px;
     height: 60px;
     width: 414px;
@@ -499,7 +499,7 @@ div, button, span, input {
 #backButton {
     background-image: url("backButton.png");
     background-size: 40px 40px;
-    background-color: #430161;
+    background-color: #f9e5b3;
     background-position: center;
     background-repeat: no-repeat;
     border: none;
@@ -517,7 +517,7 @@ div, button, span, input {
   width: 50px;
   background-size: 35px 35px;
   background-position: center;
-  background-color: #430161;
+  background-color: #f9e5b3;
   background-repeat: no-repeat;
   background-image: url("addToCharButton.png");
   position: relative;
@@ -525,7 +525,8 @@ div, button, span, input {
 
 #submitButton {
     transform: translate(-50%);
-    background-color: #75249a;
+    background-color: black;
+    color: white;
     border: none;
     border-radius: 10px;
     height: 40px;
