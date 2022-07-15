@@ -340,7 +340,6 @@ div, button, span, input {
   left: 0px;
   top: 100px;
   position: absolute;
-  -webkit-overflow-scrolling: touch;
   overflow-y: scroll;
   z-index: 0;
   display: none;
@@ -368,7 +367,6 @@ div, button, span, input {
   left: 0px;
   top: 100px;
   position: absolute;
-  -webkit-overflow-scrolling: touch;
   overflow-y: scroll;
   z-index: 0;
   display: none;
