@@ -27,7 +27,6 @@ body {
     position: fixed;
     box-sizing: border-box;
     border: 1px solid white;
-    -webkit-overflow-scrolling: touch;
     overflow-y: scroll;
 }
 
