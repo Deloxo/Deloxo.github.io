@@ -1,6 +1,14 @@
 /* A class is the name of any element style that will be reused more than one.
 An ID is the name of any element style that applies uniquely to one element.*/
 
+#scrollTop {
+  width: 414px;
+  height: 5px;
+  top: -5px;
+  left: 0px;
+  position: absolute;
+}
+
 body {
     background-color: #430161;
     color: white;
@@ -280,14 +288,15 @@ div, button, span, input {
   position: absolute;
   transform: translate(-50%);
   background-size: 34px 34px;
-  top: 56px;
-  height: 34px;
+  top: 60px;
+  height: 40px;
   width: 100px;
+  background-color: Transparent;
   background-repeat: no-repeat;
   left: 25%;
-  background-color: #430161;
   background-position: center;
-  border: 1px #760f78 solid;
+  border: 2px white solid;
+  border-bottom: 2px #430161 solid;
 }
 
 #spellsTab {
@@ -301,6 +310,7 @@ div, button, span, input {
   z-index: 0;
   display: none;
   display: initial;
+  overflow-x: hidden;
 }
 
 #traitsTabButton {
@@ -308,12 +318,13 @@ div, button, span, input {
   position: absolute;
   transform: translate(-50%);
   background-size: 34px 34px;
-  top: 56px;
-  height: 34px;
-  background-color: #430161;
+  background-color: Transparent;
+  top: 60px;
+  height: 40px;
   background-position: center;
   background-repeat: no-repeat;
-  border: none;
+  border: 2px white solid;
+  border-bottom: none;
   width: 100px;
   left: 50%;
 }
@@ -333,15 +344,16 @@ div, button, span, input {
 #rulesTabButton {
   background-image: url("rulesTabButton.png");
   position: absolute;
+  background-color: Transparent;
   transform: translate(-50%);
   width: 100px;
-  background-color: #430161;
   background-position: center;
   background-size: 34px 34px;
-  top: 56px;
+  top: 60px;
   background-repeat: no-repeat;
-  border: none;
-  height: 34px;
+  border: 2px white solid;
+  border-bottom: none;
+  height: 40px;
   left: 75%;
 }
 

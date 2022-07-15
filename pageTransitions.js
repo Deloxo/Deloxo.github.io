@@ -98,29 +98,33 @@ function cancelEdit() {
     document.getElementById("editPage").style.display = 'none';
 }
 
+function scrollToTop() {
+  window.scrollTo(0, 0);
+}
+
 function openSpellsTab() {
   document.getElementById("spellsTab").style.display = 'initial';
   document.getElementById("traitsTab").style.display = 'none';
   document.getElementById("rulesTab").style.display = 'none';
-  document.getElementById("spellsTabButton").style.border = '3px #760f78 solid';
-  document.getElementById("traitsTabButton").style.border = 'none';
-  document.getElementById("rulesTabButton").style.border = 'none';
+  document.getElementById("spellsTabButton").style.borderBottom = '3px #430161 solid';
+  document.getElementById("traitsTabButton").style.borderBottom = 'none';
+  document.getElementById("rulesTabButton").style.borderBottom = 'none';
 }
 
 function openTraitsTab() {
   document.getElementById("spellsTab").style.display = 'none';
   document.getElementById("traitsTab").style.display = 'initial';
   document.getElementById("rulesTab").style.display = 'none';
-  document.getElementById("spellsTabButton").style.border = 'none';
-  document.getElementById("traitsTabButton").style.border = '3px #760f78 solid';
-  document.getElementById("rulesTabButton").style.border = 'none';
+  document.getElementById("spellsTabButton").style.borderBottom = 'none';
+  document.getElementById("traitsTabButton").style.borderBottom = '3px #430161 solid';
+  document.getElementById("rulesTabButton").style.borderBottom = 'none';
 }
 
 function openRulesTab() {
   document.getElementById("spellsTab").style.display = 'none';
   document.getElementById("traitsTab").style.display = 'none';
   document.getElementById("rulesTab").style.display = 'initial';
-  document.getElementById("spellsTabButton").style.border = 'none';
-  document.getElementById("traitsTabButton").style.border = 'none';
-  document.getElementById("rulesTabButton").style.border = '3px #760f78 solid';
+  document.getElementById("spellsTabButton").style.borderBottom = 'none';
+  document.getElementById("traitsTabButton").style.borderBottom = 'none';
+  document.getElementById("rulesTabButton").style.borderBottom = '3px #430161 solid';
  }
