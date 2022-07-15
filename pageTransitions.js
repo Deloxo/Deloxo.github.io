@@ -14,14 +14,14 @@ function outputStorage() {
 }
 
 function submitToStorage() {
-  Object.values(spells)[spellIndex].name = document.getElementById("inputItemTitle").value;
-  Object.values(spells)[spellIndex].college = document.getElementById("inputItemCollege").value;
-  Object.values(spells)[spellIndex].type = document.getElementById("inputItemType").value;
-  Object.values(spells)[spellIndex].description = document.getElementById("inputItemDescription").value;
-  Object.values(spells)[spellIndex].cost = document.getElementById("inputItemCost").value;
-  Object.values(spells)[spellIndex].duration = document.getElementById("inputItemDuration").value;
-  Object.values(spells)[spellIndex].timeToCast = document.getElementById("inputItemTimeToCast").value;
-  Object.values(spells)[spellIndex].prerequisites = document.getElementById("inputItemPrerequisites").value;
+  Object.values(spells)[itemIndex].name = document.getElementById("inputItemTitle").value;
+  Object.values(spells)[itemIndex].college = document.getElementById("inputItemCollege").value;
+  Object.values(spells)[itemIndex].type = document.getElementById("inputItemType").value;
+  Object.values(spells)[itemIndex].description = document.getElementById("inputItemDescription").value;
+  Object.values(spells)[itemIndex].cost = document.getElementById("inputItemCost").value;
+  Object.values(spells)[itemIndex].duration = document.getElementById("inputItemDuration").value;
+  Object.values(spells)[itemIndex].timeToCast = document.getElementById("inputItemTimeToCast").value;
+  Object.values(spells)[itemIndex].prerequisites = document.getElementById("inputItemPrerequisites").value;
   localStorage.spells = JSON.stringify(spells);
 }
 
@@ -87,14 +87,14 @@ function openItemPage(number) {
 function editItem() {
     document.getElementById("itemPage").style.display = 'none';
     document.getElementById("editPage").style.display = 'initial';
-    document.getElementById("inputItemTitle").value = Object.values(spells)[spellIndex].name;
-    document.getElementById("inputItemCollege").value = Object.values(spells)[spellIndex].college;
-    document.getElementById("inputItemType").value = Object.values(spells)[spellIndex].type;
-    document.getElementById("inputItemDescription").value = Object.values(spells)[spellIndex].description;
-    document.getElementById("inputItemCost").value = Object.values(spells)[spellIndex].cost;
-    document.getElementById("inputItemDuration").value = Object.values(spells)[spellIndex].duration;
-    document.getElementById("inputItemTimeToCast").value = Object.values(spells)[spellIndex].timeToCast;
-    document.getElementById("inputItemPrerequisites").value = Object.values(spells)[spellIndex].prerequisites;
+    document.getElementById("inputItemTitle").value = Object.values(spells)[itemIndex].name;
+    document.getElementById("inputItemCollege").value = Object.values(spells)[itemIndex].college;
+    document.getElementById("inputItemType").value = Object.values(spells)[itemIndex].type;
+    document.getElementById("inputItemDescription").value = Object.values(spells)[itemIndex].description;
+    document.getElementById("inputItemCost").value = Object.values(spells)[itemIndex].cost;
+    document.getElementById("inputItemDuration").value = Object.values(spells)[itemIndex].duration;
+    document.getElementById("inputItemTimeToCast").value = Object.values(spells)[itemIndex].timeToCast;
+    document.getElementById("inputItemPrerequisites").value = Object.values(spells)[itemIndex].prerequisites;
 }
 
 function cancelEdit() {
