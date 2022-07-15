@@ -16,10 +16,15 @@ An ID is the name of any element style that applies uniquely to one element.*/
   height: 500px;
 }
 
+@font-face {
+  font-family: 'BaldurRegular';
+  src: url('Baldur Regular.ttf') format('ttf');
+}
+
 body {
     background-color: #f9e5b3;
     color: black;
-    font-family: 'Ubuntu', sans-serif;
+    font-family: 'BaldurRegular', sans-serif;
     height: 714px;
     width: 414px;
     margin: 0;
