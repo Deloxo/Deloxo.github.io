@@ -97,7 +97,6 @@ A page is any new menu area that must be backed out of-->
         function addToChar(number) {}
 
         var itemIndex = -1;
-        document.getElementById("itemPageTitle").innerHTML = Object.values(spells)[itemIndex].name;
 
         for (var x = 0; x < Object.keys(JSON.parse(localStorage.spells)).length; x++) {
             document.getElementById("spellsTab").innerHTML += '<div class="item" onclick="openItemPage(' + x + ')"><button onclick="addToChar(' + x + ')" id="addToCharacterButton"></button><span class="itemName"></span><br><span class="itemType"></span></div>';
