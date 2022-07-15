@@ -22,6 +22,8 @@ function submitToStorage() {
   Object.values(spells)[itemIndex].duration = document.getElementById("inputItemDuration").value;
   Object.values(spells)[itemIndex].timeToCast = document.getElementById("inputItemTimeToCast").value;
   Object.values(spells)[itemIndex].prerequisites = document.getElementById("inputItemPrerequisites").value;
+  localStorage.spells = JSON.stringify(spells);
+  spells = JSON.parse(localStorage.spells);
   document.getElementById("itemPageTitle").innerHTML = Object.values(spells)[itemIndex].name;
   document.getElementById("itemPageCollege").innerHTML = Object.values(spells)[itemIndex].college;
   document.getElementById("itemPageType").innerHTML = Object.values(spells)[itemIndex].type;
@@ -32,7 +34,6 @@ function submitToStorage() {
   document.getElementById("itemPagePrerequisites").innerHTML = Object.values(spells)[itemIndex].prerequisites;
   document.getElementsByClassName("itemName")[x].innerHTML = Object.values(JSON.parse(localStorage.spells))[itemIndex].name;
   document.getElementsByClassName("itemType")[x].innerHTML = Object.values(JSON.parse(localStorage.spells))[itemIndex].college;
-  localStorage.spells = JSON.stringify(spells);
 }
 
 function backToList() {
