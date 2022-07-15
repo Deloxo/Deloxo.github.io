@@ -99,7 +99,7 @@ function cancelEdit() {
 }
 
 function scrollToTop() {
-  window.scrollTo(0, 0);
+  document.getElementById("spellsTab").scrollTo(0, 0);
 }
 
 function openSpellsTab() {
