@@ -8,10 +8,11 @@ body {
     height: 714px;
     width: 414px;
     margin: 0;
-    overflow: hidden;
+    overflow-x: hidden;
     padding: 0;
     position: fixed;
     box-sizing: border-box;
+    border: 1px solid white;
 }
 
 ::-webkit-scrollbar {
@@ -258,7 +259,7 @@ div, button, span, input {
     height: 30px;
     position: relative;
     top: -20px;
-    width: 266px;
+    width: 285px;
     color: white;
 }
 
