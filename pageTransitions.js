@@ -47,7 +47,7 @@ function openListsTab() {
     document.getElementById("listsTab").style.display = 'none';
     document.getElementById("charactersTab").style.display = 'none';
     document.getElementById("settingsTab").style.display = 'none';
-    document.getElementById("listsTabButton").style.border = '3px #760f78 solid';
+    document.getElementById("listsTabButton").style.border = '3px black solid';
     document.getElementById("charactersTabButton").style.border = 'none';
     document.getElementById("settingsTabButton").style.border = 'none';
 }
@@ -57,7 +57,7 @@ function openCharactersTab() {
     document.getElementById("charactersTab").style.display = 'initial';
     document.getElementById("settingsTab").style.display = 'none';
     document.getElementById("listsTabButton").style.border = 'none';
-    document.getElementById("charactersTabButton").style.border = '3px #760f78 solid';
+    document.getElementById("charactersTabButton").style.border = '3px black solid';
     document.getElementById("settingsTabButton").style.border = 'none';
 }
 
@@ -67,7 +67,7 @@ function openSettingsTab() {
     document.getElementById("settingsTab").style.display = 'initial';
     document.getElementById("listsTabButton").style.border = 'none';
     document.getElementById("charactersTabButton").style.border = 'none';
-    document.getElementById("settingsTabButton").style.border = '3px #760f78 solid';
+    document.getElementById("settingsTabButton").style.border = '3px black solid';
 }
 
 function openCreatePage() {
@@ -121,7 +121,7 @@ function openSpellsTab() {
   document.getElementById("spellsTab").style.display = 'initial';
   document.getElementById("traitsTab").style.display = 'none';
   document.getElementById("rulesTab").style.display = 'none';
-  document.getElementById("spellsTabButton").style.borderBottom = '3px #430161 solid';
+  document.getElementById("spellsTabButton").style.borderBottom = '3px #f9e5b3 solid';
   document.getElementById("traitsTabButton").style.borderBottom = 'none';
   document.getElementById("rulesTabButton").style.borderBottom = 'none';
 }
@@ -131,7 +131,7 @@ function openTraitsTab() {
   document.getElementById("traitsTab").style.display = 'initial';
   document.getElementById("rulesTab").style.display = 'none';
   document.getElementById("spellsTabButton").style.borderBottom = 'none';
-  document.getElementById("traitsTabButton").style.borderBottom = '3px #430161 solid';
+  document.getElementById("traitsTabButton").style.borderBottom = '3px #f9e5b3 solid';
   document.getElementById("rulesTabButton").style.borderBottom = 'none';
 }
 
@@ -141,5 +141,5 @@ function openRulesTab() {
   document.getElementById("rulesTab").style.display = 'initial';
   document.getElementById("spellsTabButton").style.borderBottom = 'none';
   document.getElementById("traitsTabButton").style.borderBottom = 'none';
-  document.getElementById("rulesTabButton").style.borderBottom = '3px #430161 solid';
+  document.getElementById("rulesTabButton").style.borderBottom = '3px #f9e5b3 solid';
  }
