@@ -7,6 +7,8 @@ for (var x = 0; x < document.getElementsByClassName("backButton").length; x++) {
   document.getElementsByClassName("backButton")[x].setAttribute("onclick", "backButton()");
 }
 
+var itemIndex = -1;
+
 var listsTab = document.getElementById("listsTab");
 var charactersTab = document.getElementById("charactersTab");
 var settingsTab = document.getElementById("settingsTab");
@@ -18,6 +20,9 @@ var filtersPage = document.getElementById("filtersPage");
 var itemPage = document.getElementById("itemPage");
 
 function backButton() { //working
+  if (itemIndex != -1) {
+    itemIndex = -1;
+  }
   itemPage.style.display = "none";
   inputPage.style.display = 'none';
   filtersPage.style.display = "none";
@@ -68,28 +73,28 @@ function openFiltersPage() { //working
 
 function openItemPage(number) { //afaik this is working
     itemIndex = number;
-    document.getElementById("itemPageTitle").innerHTML = Object.values(spells)[number].name;
-    document.getElementById("itemPageCollege").innerHTML = Object.values(spells)[number].college;
-    document.getElementById("itemPageType").innerHTML = Object.values(spells)[number].type;
-    document.getElementById("itemPageDescription").innerHTML = Object.values(spells)[number].description;
-    document.getElementById("itemPageCost").innerHTML = Object.values(spells)[number].cost;
-    document.getElementById("itemPageDuration").innerHTML = Object.values(spells)[number].duration;
-    document.getElementById("itemPageTimeToCast").innerHTML = Object.values(spells)[number].timeToCast;
-    document.getElementById("itemPagePrerequisites").innerHTML = Object.values(spells)[number].prerequisites;
+    document.getElementById("itemPageTitle").innerHTML = spells[number].name;
+    document.getElementById("itemPageCollege").innerHTML = spells[number].college;
+    document.getElementById("itemPageType").innerHTML = spells[number].type;
+    document.getElementById("itemPageDescription").innerHTML = spells[number].description;
+    document.getElementById("itemPageCost").innerHTML = spells[number].cost;
+    document.getElementById("itemPageDuration").innerHTML = spells[number].duration;
+    document.getElementById("itemPageTimeToCast").innerHTML = spells[number].timeToCast;
+    document.getElementById("itemPagePrerequisites").innerHTML = spells[number].prerequisites;
     document.getElementById("itemPage").style.display = 'initial';
 }
 
 function editItem() { //this is working, but I don't trust it
     itemPage.style.display = 'none';
     inputPage.style.display = 'initial';
-    document.getElementById("inputItemTitle").value = Object.values(spells)[itemIndex].name;
-    document.getElementById("inputItemCollege").value = Object.values(spells)[itemIndex].college;
-    document.getElementById("inputItemType").value = Object.values(spells)[itemIndex].type;
-    document.getElementById("inputItemDescription").value = Object.values(spells)[itemIndex].description;
-    document.getElementById("inputItemCost").value = Object.values(spells)[itemIndex].cost;
-    document.getElementById("inputItemDuration").value = Object.values(spells)[itemIndex].duration;
-    document.getElementById("inputItemTimeToCast").value = Object.values(spells)[itemIndex].timeToCast;
-    document.getElementById("inputItemPrerequisites").value = Object.values(spells)[itemIndex].prerequisites;
+    document.getElementById("inputItemTitle").value = spells[itemIndex].name;
+    document.getElementById("inputItemCollege").value = spells[itemIndex].college;
+    document.getElementById("inputItemType").value = spells[itemIndex].type;
+    document.getElementById("inputItemDescription").value = spells[itemIndex].description;
+    document.getElementById("inputItemCost").value = spells[itemIndex].cost;
+    document.getElementById("inputItemDuration").value = spells[itemIndex].duration;
+    document.getElementById("inputItemTimeToCast").value = spells[itemIndex].timeToCast;
+    document.getElementById("inputItemPrerequisites").value = spells[itemIndex].prerequisites;
 }
 
 function openSpellsTab() { //working

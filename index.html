@@ -20,7 +20,7 @@ A page is any new menu area that must be backed out of-->
 
     <div id="header">
         <!--New Spell Button--> <button id="createPageButton"></button>
-        <!--Header--> <input onchange="searchResults()" id="searchBar" type="text" placeholder="v. 2022.7.15 16h48m">
+        <!--Header--> <input onchange="searchResults()" id="searchBar" type="text" placeholder="v. 2022.7.16 14h20m">
         <!--Filters Button--> <button id="filtersPageButton"></button>
         <!--Spells Tab--> <button id="spellsTabButton"></button>
         <!--Traits Tab--> <button id="traitsTabButton"></button>
@@ -90,15 +90,14 @@ A page is any new menu area that must be backed out of-->
 
     <script>
         var spells = JSON.parse(localStorage.spells);
-
+        spells.sort((a,b) => {if(a.key > b.key) {return 1;} else {return -1}});
         function addToChar(number) {}
 
-        var itemIndex = -1;
 
         for (var x = 0; x < Object.keys(JSON.parse(localStorage.spells)).length; x++) {
             document.getElementById("spellsTab").innerHTML += '<div class="item" onclick="openItemPage(' + x + ')"><button onclick="addToChar(' + x + ')" id="addToCharacterButton"></button><span class="itemName"></span><br><span class="itemType"></span></div>';
-            document.getElementsByClassName("itemName")[x].innerHTML = Object.values(JSON.parse(localStorage.spells))[x].name;
-            document.getElementsByClassName("itemType")[x].innerHTML = Object.values(JSON.parse(localStorage.spells))[x].college;
+            document.getElementsByClassName("itemName")[x].innerHTML = spells[x].name;
+            document.getElementsByClassName("itemType")[x].innerHTML = spells[x].college;
         }
     </script>
 </body>
