@@ -14,6 +14,10 @@ function outputStorage() {
   document.getElementById("localStorageOutput").value = localStorage.spells;
 }
 
+function inputStorage() {
+  localStorage.spells = document.getElementById("localStorageOutput").value;
+}
+
 function Spell(nameInput, collegeInput, typeInput, descriptionInput,
   costInput, durationInput, timeToCastInput, prerequisitesInput) {
   this.name = nameInput;

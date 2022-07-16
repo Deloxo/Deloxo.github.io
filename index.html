@@ -20,7 +20,7 @@ A page is any new menu area that must be backed out of-->
 
     <div id="header">
         <!--New Spell Button--> <button id="createPageButton"></button>
-        <!--Header--> <input onchange="searchResults()" id="searchBar" type="text" placeholder="v. 2022.7.16 14h20m">
+        <!--Header--> <input onchange="searchResults()" id="searchBar" type="text" placeholder="v. 2022.7.16 14h31m">
         <!--Filters Button--> <button id="filtersPageButton"></button>
         <!--Spells Tab--> <button id="spellsTabButton"></button>
         <!--Traits Tab--> <button id="traitsTabButton"></button>
@@ -72,7 +72,8 @@ A page is any new menu area that must be backed out of-->
 
         <div id="settingsTab">
             <textarea id="localStorageOutput"></textarea><br>
-            <button onclick="outputStorage()">Output Local Storage</button>
+            <button onclick="outputStorage()">Export Local Storage</button>
+            <button onclick="inputStorage()">Import Local Storage</button>
             <p><button onclick="sortSpells()">Sort Spells</button>
         </div>
 
