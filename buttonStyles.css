@@ -1,0 +1,176 @@
+.backButton {
+    background-image: url("backButton.png");
+    background-size: 40px 40px;
+    background-color: #f9e5b3;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: none;
+    height: 50px;
+    width: 50px;
+    top: 5px;
+    left: 5px;
+    position: absolute;
+}
+
+#addToCharacterButton {
+  border: none;
+  height: 50px;
+  margin: 5px;
+  width: 50px;
+  background-size: 35px 35px;
+  background-position: center;
+  background-color: #f9e5b3;
+  background-repeat: no-repeat;
+  background-image: url("addToCharButton.png");
+  position: relative;
+}
+
+#submitButton {
+    transform: translate(-50%);
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    height: 40px;
+    left: 359px;
+    position: absolute;
+    top: 5px;
+    width: 100px;
+}
+
+#listsTabButton {
+  background-size: 40px 40px;
+  margin-top: 3px;
+  border-radius: 4px;
+  height: 50px;
+  background-color: #f9e5b3;
+  background-position: center;
+  background-image: url("listsTabButton.png");
+  position: absolute;
+  transform: translate(-50%);
+  width: 100px;
+  background-repeat: no-repeat;
+  border: none;
+  left: 25%;
+  border: 3px black solid;
+}
+
+#charactersTabButton {
+  background-size: 40px 40px;
+  margin-top: 3px;
+  border-radius: 4px;
+  height: 50px;
+  background-color: #f9e5b3;
+  background-position: center;
+  background-image: url("charactersTabButton.png");
+  position: absolute;
+  transform: translate(-50%);
+  width: 100px;
+  background-repeat: no-repeat;
+  border: none;
+  left: 50%;
+}
+
+#filtersPageButton {
+  border: none;
+  height: 50px;
+  margin: 5px;
+  width: 50px;
+  background-image: url("filtersPageButton.png");
+  background-size: 40px 40px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #f9e5b3;
+}
+
+#spellsTabButton {
+  background-image: url("spellsTabButton.png");
+  position: absolute;
+  transform: translate(-50%);
+  background-size: 34px 34px;
+  top: 60px;
+  height: 40px;
+  width: 100px;
+  background-color: Transparent;
+  background-repeat: no-repeat;
+  left: 25%;
+  background-position: center;
+  border: 2px black solid;
+  border-bottom: 2px #f9e5b3 solid;
+}
+
+#createPageButton {
+  border: none;
+  height: 50px;
+  margin: 5px;
+  width: 50px;
+  background-image: url("createPageButton.png");
+  background-size: 40px 40px;
+  background-color: #f9e5b3;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#inputButton {
+    background-image: url("editButton.png");
+    background-size: 40px 40px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #f9e5b3;
+    border: none;
+    height: 50px;
+    width: 50px;
+    top: 5px;
+    left: 354px;
+    position: absolute;
+    box-sizing: border-box;
+}
+
+
+#traitsTabButton {
+  background-image: url("traitsTabButton.png");
+  position: absolute;
+  transform: translate(-50%);
+  background-size: 34px 34px;
+  background-color: Transparent;
+  top: 60px;
+  height: 40px;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: 2px black solid;
+  border-bottom: none;
+  width: 100px;
+  left: 50%;
+}
+
+#rulesTabButton {
+  background-image: url("rulesTabButton.png");
+  position: absolute;
+  background-color: Transparent;
+  transform: translate(-50%);
+  width: 100px;
+  background-position: center;
+  background-size: 34px 34px;
+  top: 60px;
+  background-repeat: no-repeat;
+  border: 2px black solid;
+  border-bottom: none;
+  height: 40px;
+  left: 75%;
+}
+
+#settingsTabButton {
+  background-size: 40px 40px;
+  margin-top: 3px;
+  border-radius: 4px;
+  height: 50px;
+  background-image: url("settingsTabButton.png");
+  position: absolute;
+  background-color: #f9e5b3;
+  background-position: center;
+  transform: translate(-50%);
+  width: 100px;
+  background-repeat: no-repeat;
+  border: none;
+  left: 75%;
+}

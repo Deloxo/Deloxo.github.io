@@ -1,0 +1,95 @@
+.itemInput {
+  border-radius: 5px;
+  border: 2px black solid;
+  padding-left: 5px;
+  padding-right: 5px;
+  width: 328px;
+  box-sizing: border-box;
+  background-color: #f9e5b3;
+}
+
+#inputItemTitle, #inputItemType, #inputItemCollege, #inputItemDescription, #inputItemCost, #inputItemDuration, #inputItemTimeToCast, #inputItemPrerequisites {
+  border-radius: 5px;
+  border: 2px black solid;
+  padding-left: 5px;
+  padding-right: 5px;
+  box-sizing: border-box;
+  height: 40px;
+  position: absolute;
+  width: 328px;
+  background-color: #f9e5b3;
+  color: black;
+}
+
+.labelSpan {
+  position: absolute;
+  left: 50px;
+}
+
+#inputItemTitle {
+  top: 60px;
+}
+
+.inputItemTitleSpan {
+  top: 40px;
+}
+
+#inputItemCollege {
+  top: 120px;
+}
+
+.inputItemCollegeSpan {
+  top: 100px;
+}
+
+#inputItemType {
+  top: 180px;
+}
+
+.inputItemTypeSpan {
+  top: 160px;
+}
+
+#inputItemDescription {
+  top: 240px;
+  height: 200px;
+}
+
+.inputItemDescriptionSpan {
+  top: 220px;
+}
+
+#inputItemCost {
+  top: 460px;
+
+}
+
+.inputItemCostSpan {
+  top: 440px;
+}
+
+#inputItemDuration {
+  top: 520px;
+
+}
+
+.inputItemDurationSpan {
+  top: 500px;
+}
+
+#inputItemTimeToCast {
+  top: 580px;
+
+}
+
+.inputItemTimeToCastSpan {
+  top: 560px;
+}
+
+#inputItemPrerequisites {
+  top: 640px;
+}
+
+.inputItemPrerequisitesSpan {
+  top: 620px;
+}

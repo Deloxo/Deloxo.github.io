@@ -1,0 +1,25 @@
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+.item {
+    border-bottom: 1px solid gray;
+    font-size: 25px;
+    height: 60px;
+    line-height: 20px;
+    padding-left: 10px;
+    width: 414px;
+}
+
+.itemName {
+    left: 10px;
+    position: relative;
+    top: -25px;
+}
+
+.itemType {
+    font-size: 18px;
+    left: 70px;
+    position: relative;
+    top: -25px;
+}

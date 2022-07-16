@@ -8,69 +8,73 @@ A page is any new menu area that must be backed out of-->
     <meta name="viewport" content="width=device-width, user-scalable=no">
     <meta charset="utf-8">
     <meta name="theme-color" content="#f9e5b3" />
-    <!--changing the color of the iphone top bar-->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="coreStyle.css">
+    <link rel="stylesheet" href="pageStyles.css">
+    <link rel="stylesheet" href="buttonStyles.css">
+    <link rel="stylesheet" href="inputPageStyle.css">
+    <link rel="stylesheet" href="spellsPageStyle.css">
+    <link rel="stylesheet" href="settingsPageStyle.css">
 </head>
 
 <body>
 
     <div id="header">
-        <!--New Spell Button--> <button onclick="openCreatePage()" id="createPageButton"></button>
+        <!--New Spell Button--> <button id="createPageButton"></button>
         <!--Header--> <input onchange="searchResults()" id="searchBar" type="text" placeholder="v. 2022.7.15 16h48m">
-        <!--Filters Button--> <button onclick="openFiltersPage()" id="filtersPageButton"></button>
-        <!--Spells Tab--> <button onclick="openSpellsTab()" id="spellsTabButton"></button>
-        <!--Traits Tab--> <button onclick="openTraitsTab()" id="traitsTabButton"></button>
-        <!--Rules Tab--> <button onclick="openRulesTab()" id="rulesTabButton"></button>
+        <!--Filters Button--> <button id="filtersPageButton"></button>
+        <!--Spells Tab--> <button id="spellsTabButton"></button>
+        <!--Traits Tab--> <button id="traitsTabButton"></button>
+        <!--Rules Tab--> <button id="rulesTabButton"></button>
     </div>
 
     <div id="mainContent">
 
-      <div id="editPage">
-          <button onclick="backToList()" id="backButton"></button>
-          <span class="inputItemTitleSpan labelSpan">Name<br></span><input id="inputItemTitle">
-          <span class="inputItemCollegeSpan labelSpan">College<br></span><input id="inputItemCollege">
-          <span class="inputItemTypeSpan labelSpan">Type<br></span><input id="inputItemType">
-          <span class="inputItemDescriptionSpan labelSpan">Description<br></span><textarea id="inputItemDescription"></textarea>
-          <span class="inputItemCostSpan labelSpan">Cost<br></span><input id="inputItemCost">
-          <span class="inputItemDurationSpan labelSpan">Duration<br></span><input id="inputItemDuration">
-          <span class="inputItemTimeToCastSpan labelSpan">Time to Cast<br></span><input id="inputItemTimeToCast">
-          <span class="inputItemPrerequisitesSpan labelSpan">Prerequisites<br></span><input id="inputItemPrerequisites">
-          <button id="submitButton" onclick="submitToStorage()">Submit</button>
-      </div>
-
-      <div id="itemPage">
-            <button onclick="backToList()" id="backButton"></button>
-            <button id="editButton" onclick="editItem()"></button>
+        <div id="itemPage" class="page">
+            <button class="backButton"></button>
+            <button id="inputButton" onclick="editItem()"></button>
             <p><span id="itemPageTitle"></span>
-            <br><span id="itemPageCollege"></span>
-            <br><span id="itemPageType"></span>
+                <br><span id="itemPageCollege"></span>
+                <br><span id="itemPageType"></span>
             <p><span id="itemPageDescription"></span>
             <p>Cost: <span id="itemPageCost"></span>
             <p>Duration: <span id="itemPageDuration"></span>
             <p>Time to Cast: <span id="itemPageTimeToCast"></span>
             <p>Prerequisites: <span id="itemPagePrerequisites"></span>
-      </div>
+        </div>
 
-      <div id="filtersPage">
-          <button onclick="backToList()" id="backButton"></button>
-      </div>
+        <div id="inputPage" class="page">
+            <button class="backButton"></button>
+            <span class="inputItemTitleSpan labelSpan">Name<br></span><input id="inputItemTitle">
+            <span class="inputItemCollegeSpan labelSpan">College<br></span><input id="inputItemCollege">
+            <span class="inputItemTypeSpan labelSpan">Type<br></span><input id="inputItemType">
+            <span class="inputItemDescriptionSpan labelSpan">Description<br></span><textarea id="inputItemDescription"></textarea>
+            <span class="inputItemCostSpan labelSpan">Cost<br></span><input id="inputItemCost">
+            <span class="inputItemDurationSpan labelSpan">Duration<br></span><input id="inputItemDuration">
+            <span class="inputItemTimeToCastSpan labelSpan">Time to Cast<br></span><input id="inputItemTimeToCast">
+            <span class="inputItemPrerequisitesSpan labelSpan">Prerequisites<br></span><input id="inputItemPrerequisites">
+            <button id="submitButton" onclick="submitToStorage()">Submit</button>
+        </div>
+
+        <div id="filtersPage" class="page">
+            <button class="backButton"></button>
+        </div>
 
 
-      <div id="spellsTab"></div>
+        <div id="spellsTab"></div>
 
-      <div id="traitsTab">test</div>
+        <div id="traitsTab">test</div>
 
-      <div id="rulesTab"></div>
+        <div id="rulesTab"></div>
 
+        <div id="listsTab"></div>
 
-      <div id="listsTab"></div>
+        <div id="charactersTab"></div>
 
-      <div id="charactersTab"></div>
-
-      <div id="settingsTab">
-        <textarea id="localStorageOutput"></textarea><br>
-        <button onclick="outputStorage()">Output Local Storage</button>
-      </div>
+        <div id="settingsTab">
+            <textarea id="localStorageOutput"></textarea><br>
+            <button onclick="outputStorage()">Output Local Storage</button>
+            <p><button onclick="sortSpells()">Sort Spells</button>
+        </div>
 
 
     </div>
@@ -82,6 +86,7 @@ A page is any new menu area that must be backed out of-->
     </div>
 
     <script src="pageTransitions.js"></script>
+    <script src="script.js"></script>
 
     <script>
         var spells = JSON.parse(localStorage.spells);

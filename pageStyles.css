@@ -1,0 +1,97 @@
+.page {
+    width: 412px;
+    height: 712px;
+    left: -2px;
+    top: -2px;
+    position: absolute;
+    z-index: 2;
+    background-color: #f9e5b3;
+}
+
+.tab {
+
+}
+
+#itemPage {
+  display: none;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 60px;
+}
+
+#inputPage {
+  display: none;
+  border: 1px solid black;
+  padding: 40px;
+}
+
+#filtersPage {
+  display: none;
+}
+
+#settingsTab {
+  height: 650px;
+  width: 412px;
+  left: 0px;
+  top: 0px;
+  display: none;
+  background-color: #f9e5b3;
+  position: absolute;
+  z-index: 1;
+}
+
+#rulesTab {
+  height: 550px;
+  width: 412px;
+  left: 0px;
+  top: 100px;
+  position: absolute;
+  overflow-y: scroll;
+  z-index: 0;
+  display: none;
+}
+
+#charactersTab {
+  height: 650px;
+  width: 412px;
+  left: 0px;
+  top: 0px;
+  display: none;
+  position: absolute;
+  background-color: #f9e5b3;
+  z-index: 1;
+}
+
+#listsTab {
+  height: 650px;
+  width: 412px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+  background-color: #f9e5b3;
+  display: none;
+  z-index: 1;
+}
+
+#spellsTab {
+  height: 554px;
+  width: 409px;
+  left: -0.75px;
+  top: 97px;
+  position: absolute;
+  z-index: 0;
+  display: none;
+  display: initial;
+  overflow-x: hidden;
+}
+
+#traitsTab {
+  height: 550px;
+  width: 412px;
+  left: 0px;
+  top: 100px;
+  position: absolute;
+  overflow-y: scroll;
+  z-index: 0;
+  display: none;
+}

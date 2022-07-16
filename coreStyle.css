@@ -1,0 +1,50 @@
+body {
+    background-color: #f9e5b3;
+    color: black;
+    font-family: 'Ubuntu', sans-serif;
+    height: 714px;
+    width: 414px;
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    box-sizing: border-box;
+    border: 1px solid black;
+    overflow-y: scroll;
+}
+
+#searchBar {
+    background-color: #f9e5b3;
+    border: 2px solid black;
+    border-radius: 45px;
+    font-size: 15px;
+    padding-left: 5px;
+    height: 30px;
+    position: relative;
+    top: -20px;
+    width: 281px;
+    color: black;
+}
+
+#header {
+    border-bottom: 2px black solid;
+    left: -3px;
+    height: 100px;
+    width: 414px;
+    position: absolute;
+    z-index: 1;
+    top: -3px;
+}
+
+#footer {
+    border-top: 2px black solid;
+    left: -3px;
+    height: 60px;
+    width: 414px;
+    position: absolute;
+    z-index: 1;
+    top: 651px;
+}
+
+div, button, span, input {
+  box-sizing: border-box;
+}
