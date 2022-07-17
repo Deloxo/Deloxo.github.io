@@ -23,6 +23,7 @@
   background-repeat: no-repeat;
   background-image: url("addToCharButton.png");
   position: relative;
+  z-index: 2;
 }
 
 #submitButton {

@@ -28,6 +28,10 @@ function backButton() { //working
   filtersPage.style.display = "none";
 }
 
+function addToChar(number) {
+  openCharactersTab();
+}
+
 function openCreatePage() { //working
   inputPage.style.display = 'initial';
   document.getElementById("inputItemTitle").value = "";

@@ -13,13 +13,19 @@
 
 .itemName {
     left: 10px;
-    position: relative;
-    top: -25px;
+    position: absolute;
+    top: 10px;
 }
 
 .itemType {
     font-size: 18px;
-    left: 70px;
-    position: relative;
-    top: -25px;
+    left: 30px;
+    position: absolute;
+    top: 35px;
+}
+
+.itemBody {
+  height: 60px;
+  position: absolute;
+  width: 344px;
 }
