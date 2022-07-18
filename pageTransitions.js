@@ -88,7 +88,7 @@ function openFiltersPage() { //working
   filtersPage.style.display = 'initial';
 }
 
-function openItemPage(number) { //afaik this is working
+function openSpellPage(number) { //afaik this is working
     itemIndex = number;
     document.getElementById("itemPageTitle").innerHTML = spells[number].name;
     document.getElementById("itemPageCollege").innerHTML = spells[number].college;
@@ -98,6 +98,13 @@ function openItemPage(number) { //afaik this is working
     document.getElementById("itemPageDuration").innerHTML = spells[number].duration;
     document.getElementById("itemPageTimeToCast").innerHTML = spells[number].timeToCast;
     document.getElementById("itemPagePrerequisites").innerHTML = spells[number].prerequisites;
+    document.getElementById("itemPage").style.display = 'initial';
+}
+
+function openTraitPage(number) { //afaik this is working
+    itemIndex = number;
+    document.getElementById("itemPageTitle").innerHTML = traits[number].name;
+    document.getElementById("itemPageType").innerHTML = traits[number].type;
     document.getElementById("itemPage").style.display = 'initial';
 }
 

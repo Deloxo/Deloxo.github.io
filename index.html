@@ -20,7 +20,7 @@ A page is any new menu area that must be backed out of-->
 
     <div id="header">
         <!--New Spell Button--> <button id="createPageButton"></button>
-        <!--Header--> <input onchange="searchResults()" id="searchBar" type="text" placeholder="v. 2022.7.17 22h17m">
+        <!--Header--> <input onchange="searchResults()" id="searchBar" type="text" placeholder="v. 2022.7.18 12h59m">
         <!--Filters Button--> <button id="filtersPageButton"></button>
         <!--Spells Tab--> <button id="spellsTabButton"></button>
         <!--Traits Tab--> <button id="traitsTabButton"></button>
@@ -69,7 +69,7 @@ A page is any new menu area that must be backed out of-->
 
         <div id="spellsTab"></div>
 
-        <div id="traitsTab">test</div>
+        <div id="traitsTab"></div>
 
         <div id="rulesTab"></div>
 
@@ -99,15 +99,26 @@ A page is any new menu area that must be backed out of-->
     <script>
         var sortingProperty = 'key';
         var spells = JSON.parse(localStorage.spells);
+        var traits = JSON.parse(localStorage.traits);
+        var rules = JSON.parse(localStorage.rules);
+        var characters = JSON.parse(localStorage.characters);
+        traits.sort((a,b) => {if(a.key > b.key) {return 1} else {return -1}});
+        localStorage.traits = JSON.stringify(traits);
         spells.sort((a,b) => {if(a.key < b.key) {return 1} else {return -1}});
         spells.sort((a,b) => {if(a.sorceryLevel > b.sorceryLevel) {return 1} else {return -1}});
         function addToChar(number) {}
 
         for (var x = 0; x < spells.length; x++) {
-            document.getElementById("spellsTab").innerHTML += '<div class="item"><button onclick="addToChar(' + x + ')" id="addToCharacterButton"></button><span class="itemBody" onclick="openItemPage(' + x + ')"><span class="itemName"></span><br><span class="itemType"></span><span class="sorceryLevel"></span></span></div>';
-            document.getElementsByClassName("itemName")[x].innerHTML = spells[x].name;
-            document.getElementsByClassName("itemType")[x].innerHTML = spells[x].college;
+            document.getElementById("spellsTab").innerHTML += '<div class="spell item"><button onclick="addToChar(' + x + ')" id="addToCharacterButton"></button><span class="spellBody itemBody" onclick="openSpellPage(' + x + ')"><span class="spellName itemName"></span><br><span class="spellCollege itemType"></span><span class="sorceryLevel itemTag"></span></span></div>';
+            document.getElementsByClassName("spellName")[x].innerHTML = spells[x].name;
+            document.getElementsByClassName("spellCollege")[x].innerHTML = spells[x].college;
             document.getElementsByClassName("sorceryLevel")[x].innerHTML = "SL" + spells[x].sorceryLevel;
+        }
+
+        for (var x = 0; x < traits.length; x++) {
+            document.getElementById("traitsTab").innerHTML += '<div class="trait item"><button onclick="addToChar(' + x + ')" id="addToCharacterButton"></button><span class="traitBody itemBody" onclick="openTraitPage(' + x + ')"><span class="traitName itemName"></span><br><span class="traitType itemType"></span></span></div>';
+            document.getElementsByClassName("traitName")[x].innerHTML = traits[x].name;
+            document.getElementsByClassName("traitType")[x].innerHTML = traits[x].type;
         }
     </script>
 </body>

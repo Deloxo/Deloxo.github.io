@@ -1,13 +1,23 @@
 function searchResults() { //working
  for (var x = 0; x < spells.length; x++) {
-   document.getElementsByClassName("item")[x].style.display = '';
-   document.getElementsByClassName("itemName")[x].innerHTML = spells[x].name;
-   document.getElementsByClassName("itemType")[x].innerHTML = spells[x].college;
+   document.getElementsByClassName("spell")[x].style.display = '';
+   document.getElementsByClassName("spellName")[x].innerHTML = spells[x].name;
+   document.getElementsByClassName("spellCollege")[x].innerHTML = spells[x].college;
    document.getElementsByClassName("sorceryLevel")[x].innerHTML = "SL" + spells[x].sorceryLevel;
+ }
+ for (var x = 0; x < traits.length; x++) {
+   document.getElementsByClassName("trait")[x].style.display = '';
+   document.getElementsByClassName("traitName")[x].innerHTML = traits[x].name;
+   document.getElementsByClassName("traitType")[x].innerHTML = traits[x].type;
  }
  for (var x = 0; x < spells.length; x++) {
      if (spells[x].name.includes(document.getElementById("searchBar").value) == false && spells[x].college.includes(document.getElementById("searchBar").value) == false) {
-       document.getElementsByClassName("item")[x].style.display = 'none';
+       document.getElementsByClassName("spell")[x].style.display = 'none';
+     }
+ }
+ for (var x = 0; x < traits.length; x++) {
+     if (traits[x].name.includes(document.getElementById("searchBar").value) == false && traits[x].type.includes(document.getElementById("searchBar").value) == false) {
+       document.getElementsByClassName("trait")[x].style.display = 'none';
      }
  }
 }
@@ -15,7 +25,7 @@ function searchResults() { //working
 function toCamelCase(str){
   let newStr = "";
   if(str){
-    let wordArr = str.split(/[-_]/g);
+    let wordArr = str.split(/[ ]/g);
     for (let i in wordArr){
       if(i > 0){
         newStr += wordArr[i].charAt(0).toUpperCase() + wordArr[i].slice(1);
@@ -71,6 +81,12 @@ function Spell(nameInput, collegeInput, typeInput, descriptionInput,
   this.prerequisites = prerequisitesInput;
   this.key = toCamelCase(nameInput);
   this.sorceryLevel = sorceryLevelInput;
+}
+
+function Trait(nameInput, typeInput) {
+  this.name = nameInput;
+  this.type = typeInput;
+  this.key = toCamelCase(nameInput);
 }
 
 function submitToStorage() {
