@@ -23,6 +23,7 @@
   display: none;
   border: 1px solid black;
   padding: 40px;
+  overflow-y: scroll;
 }
 
 #filtersPage {

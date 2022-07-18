@@ -20,7 +20,7 @@ A page is any new menu area that must be backed out of-->
 
     <div id="header">
         <!--New Spell Button--> <button id="createPageButton"></button>
-        <!--Header--> <input onchange="searchResults()" id="searchBar" type="text" placeholder="v. 2022.7.16 14h31m">
+        <!--Header--> <input onchange="searchResults()" id="searchBar" type="text" placeholder="v. 2022.7.17 22h17m">
         <!--Filters Button--> <button id="filtersPageButton"></button>
         <!--Spells Tab--> <button id="spellsTabButton"></button>
         <!--Traits Tab--> <button id="traitsTabButton"></button>
@@ -31,7 +31,7 @@ A page is any new menu area that must be backed out of-->
 
         <div id="itemPage" class="page">
             <button class="backButton"></button>
-            <button id="inputButton" onclick="editItem()"></button>
+            <button id="inputButton"></button>
             <p><h2 id="itemPageTitle"></h2>
             <span id="itemPageCollege"></span>
             <br><span id="itemPageType"></span>
@@ -44,6 +44,7 @@ A page is any new menu area that must be backed out of-->
 
         <div id="inputPage" class="page">
             <button class="backButton"></button>
+            <button class="deleteButton"></button>
             <span class="inputItemTitleSpan labelSpan">Name<br></span><input id="inputItemTitle">
             <span class="inputItemCollegeSpan labelSpan">College<br></span><input id="inputItemCollege">
             <span class="inputItemTypeSpan labelSpan">Type<br></span><input id="inputItemType">
@@ -52,11 +53,17 @@ A page is any new menu area that must be backed out of-->
             <span class="inputItemDurationSpan labelSpan">Duration<br></span><input id="inputItemDuration">
             <span class="inputItemTimeToCastSpan labelSpan">Time to Cast<br></span><input id="inputItemTimeToCast">
             <span class="inputItemPrerequisitesSpan labelSpan">Prerequisites<br></span><input id="inputItemPrerequisites">
+            <span class="inputItemSorceryLevelSpan labelSpan">SL<br></span><input id="inputItemSorceryLevel">
             <button id="submitButton" onclick="submitToStorage()">Submit</button>
         </div>
 
         <div id="filtersPage" class="page">
             <button class="backButton"></button>
+            <div id="sortByList">
+              <h3>Sort By</h3>
+              <br><button onclick="sortBy('key')">Sort by Key></button>
+              <br><button onclick="sortBy('sorceryLevel')">Sort by Sorcery Level></button>
+            </div>
         </div>
 
 
@@ -90,15 +97,17 @@ A page is any new menu area that must be backed out of-->
     <script src="script.js"></script>
 
     <script>
+        var sortingProperty = 'key';
         var spells = JSON.parse(localStorage.spells);
-        spells.sort((a,b) => {if(a.key > b.key) {return 1;} else {return -1}});
+        spells.sort((a,b) => {if(a.key < b.key) {return 1} else {return -1}});
+        spells.sort((a,b) => {if(a.sorceryLevel > b.sorceryLevel) {return 1} else {return -1}});
         function addToChar(number) {}
 
-
-        for (var x = 0; x < Object.keys(JSON.parse(localStorage.spells)).length; x++) {
-            document.getElementById("spellsTab").innerHTML += '<div class="item"><button onclick="addToChar(' + x + ')" id="addToCharacterButton"></button><span class="itemBody" onclick="openItemPage(' + x + ')"><span class="itemName"></span><br><span class="itemType"></span></span></div>';
+        for (var x = 0; x < spells.length; x++) {
+            document.getElementById("spellsTab").innerHTML += '<div class="item"><button onclick="addToChar(' + x + ')" id="addToCharacterButton"></button><span class="itemBody" onclick="openItemPage(' + x + ')"><span class="itemName"></span><br><span class="itemType"></span><span class="sorceryLevel"></span></span></div>';
             document.getElementsByClassName("itemName")[x].innerHTML = spells[x].name;
             document.getElementsByClassName("itemType")[x].innerHTML = spells[x].college;
+            document.getElementsByClassName("sorceryLevel")[x].innerHTML = "SL" + spells[x].sorceryLevel;
         }
     </script>
 </body>

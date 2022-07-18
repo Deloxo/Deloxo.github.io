@@ -1,6 +1,9 @@
 function searchResults() { //working
  for (var x = 0; x < spells.length; x++) {
    document.getElementsByClassName("item")[x].style.display = '';
+   document.getElementsByClassName("itemName")[x].innerHTML = spells[x].name;
+   document.getElementsByClassName("itemType")[x].innerHTML = spells[x].college;
+   document.getElementsByClassName("sorceryLevel")[x].innerHTML = "SL" + spells[x].sorceryLevel;
  }
  for (var x = 0; x < spells.length; x++) {
      if (spells[x].name.includes(document.getElementById("searchBar").value) == false && spells[x].college.includes(document.getElementById("searchBar").value) == false) {
@@ -9,9 +12,47 @@ function searchResults() { //working
  }
 }
 
+function toCamelCase(str){
+  let newStr = "";
+  if(str){
+    let wordArr = str.split(/[-_]/g);
+    for (let i in wordArr){
+      if(i > 0){
+        newStr += wordArr[i].charAt(0).toUpperCase() + wordArr[i].slice(1);
+      }else{
+        newStr += wordArr[i].charAt(0).toLowerCase() + wordArr[i].slice(1)
+      }
+    }
+  }else{
+    return newStr;
+  }
+  return newStr;
+}
+
 
 function outputStorage() {
   document.getElementById("localStorageOutput").value = localStorage.spells;
+}
+
+function deleteItem() {
+  spells.splice(itemIndex, 1);
+  localStorage.spells = JSON.stringify(spells);
+  document.getElementsByClassName("item")[spells.length].remove();
+  for (var x = 0; x < spells.length; x++) {
+      document.getElementsByClassName("itemName")[x].innerHTML = spells[x].name;
+      document.getElementsByClassName("itemType")[x].innerHTML = spells[x].college;
+  }
+}
+
+function sortBy(property) {
+  sortingProperty = property;
+  if (property == 'key') {
+    spells.sort((a,b) => {if(a.key > b.key) {return 1} else {return -1}});
+  }
+  if (property == 'sorceryLevel') {
+    spells.sort((a,b) => {if(a.sorceryLevel > b.sorceryLevel) {return 1} else {return -1}});
+  }
+  searchResults();
 }
 
 function inputStorage() {
@@ -19,7 +60,7 @@ function inputStorage() {
 }
 
 function Spell(nameInput, collegeInput, typeInput, descriptionInput,
-  costInput, durationInput, timeToCastInput, prerequisitesInput) {
+  costInput, durationInput, timeToCastInput, prerequisitesInput, sorceryLevelInput) {
   this.name = nameInput;
   this.college = collegeInput;
   this.type = typeInput;
@@ -28,27 +69,41 @@ function Spell(nameInput, collegeInput, typeInput, descriptionInput,
   this.duration = durationInput;
   this.timeToCast = timeToCastInput;
   this.prerequisites = prerequisitesInput;
+  this.key = toCamelCase(nameInput);
+  this.sorceryLevel = sorceryLevelInput;
 }
 
 function submitToStorage() {
   var prelength = spells.length;
-  spells[itemIndex] = new Spell(
-    document.getElementById("inputItemTitle").value,
-    document.getElementById("inputItemCollege").value,
-    document.getElementById("inputItemType").value,
-    document.getElementById("inputItemDescription").value,
-    document.getElementById("inputItemCost").value,
-    document.getElementById("inputItemDuration").value,
-    document.getElementById("inputItemTimeToCast").value,
-    document.getElementById("inputItemPrerequisites").value
-  );
-  spells.sort((a,b) => {if(a.name > b.name) {return 1;} else {return -1}});
+  if (editing == true && creating == false) {
+    spells[itemIndex] = new Spell(
+      document.getElementById("inputItemTitle").value,
+      document.getElementById("inputItemCollege").value,
+      document.getElementById("inputItemType").value,
+      document.getElementById("inputItemDescription").value,
+      document.getElementById("inputItemCost").value,
+      document.getElementById("inputItemDuration").value,
+      document.getElementById("inputItemTimeToCast").value,
+      document.getElementById("inputItemPrerequisites").value,
+      document.getElementById("inputItemSorceryLevel").value
+    );
+  }
+  if (editing == false && creating == true) {
+    spells[spells.length] = new Spell(
+      document.getElementById("inputItemTitle").value,
+      document.getElementById("inputItemCollege").value,
+      document.getElementById("inputItemType").value,
+      document.getElementById("inputItemDescription").value,
+      document.getElementById("inputItemCost").value,
+      document.getElementById("inputItemDuration").value,
+      document.getElementById("inputItemTimeToCast").value,
+      document.getElementById("inputItemPrerequisites").value,
+      document.getElementById("inputItemSorceryLevel").value
+    );
+    document.getElementById("spellsTab").innerHTML += '<div class="item"><button onclick="addToChar(' + x + ')" id="addToCharacterButton"></button><span class="itemBody" onclick="openItemPage(' + x + ')"><span class="itemName"></span><br><span class="itemType"></span><span class="sorceryLevel"></span></span></div>';
+  }
+  spells.sort((a,b) => {if(a.key < b.key) {return 1} else {return -1}});
+  spells.sort((a,b) => {if(a.sorceryLevel > b.sorceryLevel) {return 1} else {return -1}});
   localStorage.spells = JSON.stringify(spells);
-  if (prelength < spells.length) {
-    document.getElementById("spellsTab").innerHTML += '<div class="item" onclick="openItemPage(' + spells.length + ')"><button onclick="addToChar(' + spells.length + ')" id="addToCharacterButton"></button><span class="itemName"></span><br><span class="itemType"></span></div>';
-  }
-  for (var x = 0; x < Object.values(spells).length; x++) {
-      document.getElementsByClassName("itemName")[x].innerHTML = spells[x].name;
-      document.getElementsByClassName("itemType")[x].innerHTML = spells[x].college;
-  }
+  searchResults();
 }

@@ -3,9 +3,16 @@ document.getElementById("filtersPageButton").setAttribute("onclick", "openFilter
 document.getElementById("spellsTabButton").setAttribute("onclick", "openSpellsTab()");
 document.getElementById("traitsTabButton").setAttribute("onclick", "openTraitsTab()");
 document.getElementById("rulesTabButton").setAttribute("onclick", "openRulesTab()");
+document.getElementById("inputButton").setAttribute("onclick", "editItem()");
 for (var x = 0; x < document.getElementsByClassName("backButton").length; x++) {
   document.getElementsByClassName("backButton")[x].setAttribute("onclick", "backButton()");
 }
+for (var x = 0; x < document.getElementsByClassName("deleteButton").length; x++) {
+  document.getElementsByClassName("deleteButton")[x].setAttribute("onclick", "deleteItem()");
+}
+
+var editing = false;
+var creating = false;
 
 var itemIndex = -1;
 
@@ -23,6 +30,8 @@ function backButton() { //working
   if (itemIndex != -1) {
     itemIndex = -1;
   }
+  editing = false;
+  creating = false;
   itemPage.style.display = "none";
   inputPage.style.display = 'none';
   filtersPage.style.display = "none";
@@ -32,8 +41,11 @@ function addToChar(number) {
   openCharactersTab();
 }
 
-function openCreatePage() { //working
+function openCreatePage() {
+  editing = false;
+  creating = true;
   inputPage.style.display = 'initial';
+  document.getElementsByClassName("deleteButton")[0].style.display = "none";
   document.getElementById("inputItemTitle").value = "";
   document.getElementById("inputItemCollege").value = "";
   document.getElementById("inputItemType").value = "";
@@ -42,6 +54,7 @@ function openCreatePage() { //working
   document.getElementById("inputItemDuration").value = "";
   document.getElementById("inputItemTimeToCast").value = "";
   document.getElementById("inputItemPrerequisites").value = "";
+  document.getElementById("inputItemSorceryLevel").value = "";
 }
 
 function openListsTab() { //working
@@ -89,8 +102,11 @@ function openItemPage(number) { //afaik this is working
 }
 
 function editItem() { //this is working, but I don't trust it
+    editing = true;
+    creating = false;
     itemPage.style.display = 'none';
     inputPage.style.display = 'initial';
+    document.getElementsByClassName("deleteButton")[0].style.display = "initial";
     document.getElementById("inputItemTitle").value = spells[itemIndex].name;
     document.getElementById("inputItemCollege").value = spells[itemIndex].college;
     document.getElementById("inputItemType").value = spells[itemIndex].type;
@@ -99,6 +115,7 @@ function editItem() { //this is working, but I don't trust it
     document.getElementById("inputItemDuration").value = spells[itemIndex].duration;
     document.getElementById("inputItemTimeToCast").value = spells[itemIndex].timeToCast;
     document.getElementById("inputItemPrerequisites").value = spells[itemIndex].prerequisites;
+    document.getElementById("inputItemSorceryLevel").value = spells[itemIndex].sorceryLevel;
 }
 
 function openSpellsTab() { //working
