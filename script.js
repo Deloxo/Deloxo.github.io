@@ -66,7 +66,7 @@ function sortBy(property) {
 }
 
 function inputStorage() {
-  localStorage.spells = document.getElementById("localStorageOutput").value;
+  localStorage.traits = document.getElementById("localStorageOutput").value;
 }
 
 function Spell(nameInput, collegeInput, typeInput, descriptionInput,
